@@ -32,7 +32,7 @@
 \begin{document}
 
 
-\title{DESIGN AND IMPLEMENTATION OF A HEARTBEAT SEGMENTATION AND CLASSIFICATION MODEL..??}
+\title{DESIGN AND IMPLEMENTATION OF A HEARTBEAT SEGMENTATION AND CLASSIFICATION MODEL}
 
 \author{Boikanyo Radiokana (1386807) \\ Elias Sepuru (1427726)
 \thanks{School of Electrical \& Information Engineering, University of the
@@ -114,10 +114,18 @@ To combat the issues of noise in real life recordings of heartbeat sounds Liang 
     \caption{System Overview}
     \label{fig:sysov}
 \end{figure}{}
+
+
+Figure \ref{fig:sysov} above illustrates an overview of the proposed system. The raw data is read from the two datasets, Dataset A and Dataset B as mentioned in the section \ref{PSR}. The audio data can either be in \texttt{.wav} or \texttt{.aif} format.
+As mentioned previously, the audio data sets contain excessive noise which requires denoising before segmentation can take place. This denoisong process is performed in the preprocessing phase to ensure that the data is conditioned for segmentation. Once the data is conditioned, it goes through the segmentation phase where S1 and S2 are located. This is done in order to extract important features useful for classification. The features will be fed into a machine learning algorithm in order to classify the heart sounds into normal or diseased categories.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 \section{DESIGN METHODOLOGY}
 
-
-
+The project in its entirety mainly consists of two main sections, heartbeat segmentation and heartbeat classification. However, due to the fact that data cleansing forms the bulk of the project, it was decided that it will be suitable to make preprocessing a standalone section as seen in figure \ref{fig:sysov}. This will also help break down the project into manageable tasks.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
 \section{CONCLUSION}
 
 
