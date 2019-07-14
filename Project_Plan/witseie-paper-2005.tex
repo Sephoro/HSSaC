@@ -13,7 +13,7 @@
 %
 % All KJN's macros and goodies (some shameless borrowing from SPL)
 \usepackage{KJN}
-
+\usepackage{xcolor}
 %
 % PDF Info
 %
@@ -124,6 +124,54 @@ As mentioned previously, the audio data sets contain excessive noise which requi
 \section{DESIGN METHODOLOGY}
 
 The project in its entirety mainly consists of two main sections, heartbeat segmentation and heartbeat classification. However, due to the fact that data cleansing forms the bulk of the project, it was decided that it will be suitable to make preprocessing a standalone section as seen in figure \ref{fig:sysov}. This will also help break down the project into manageable tasks.
+
+\subsection{Preprocessing}
+As mentioned earlier the audio data is from real world situations and contains a lot of background noise, in the processing phase techniques to remove the background noise are applied to the audio data.
+
+The audio data has a sampling frequency of 44.1 kHz, the first stage of denoising the signal involves downsampling the signal with a factor between 10 - 20. Since it is known that the highest desired frequency is that of the murmur which is 600 Hz \cite{mumur}, downsampling by the highest factor, which is 20, will still give a sampling frequency higher than twice that of a murmur. Downsampling helps with cutting high frequency components, exploiting the Nyquist Theorem. The high frequency components are aliased whilst preserving the desired low frequency components. Downsampling also compresses the size of the audio data, allowing for faster processing time \cite{lavry2004sampling}.
+
+Most of the information of a PCG signal is contained in the lower frequency components of the signal as mentioned in the above paragraph. With that mentioned a low pass filter of 195 Hz is to be applied after downsampling to further curb the noise \cite{pascal}.
+
+The final stage of preprocessing involves normalising the signal to the absolute maximum of the signal using equation \ref{eq:1} \cite{liang1997heart}.
+
+\begin{equation}
+    x_{norm}(i) = \frac{x_{f_{ds}}(i)}{max_{j}(|x_{f_{ds}}(j)|)}
+    \label{eq:1}
+\end{equation}{}
+where $x_{f_{ds}}$ is the downsapmled signal. 
+Figure \ref{fig:pre} summarises the preprocessing phase.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{Project_Plan/preproc.png}
+    \caption{Flow diagram of the preprocessing phase}
+    \label{fig:pre}
+\end{figure}{}
+
+\subsection{Heartbeat Segmentation}
+The segmentation phase involves locating S1 and S2 heart sounds, thus determining the diastolic and systolic periods. To segment these heart sounds, the envelope of the normalized signal obtained in the preprocessing phase is computed. The Shannon energy will be used to compute the envelope of the signal with equation:
+
+\begin{equation}
+    E = -x^2log(x^2)
+\end{equation}{}
+
+The reason for choosing this method is the fact that Shannon energy attenuates small spikes in signals much more than large spikes []. Furthermore, a triangular smooth function will be applied to smoothen out the signal since the signal will still contain small spikes. Equation 3 below will then be used to determine the average Shannon energy of the entire signal,
+
+\begin{equation}
+    E_s = -\frac{1}{N}\sum_{i=1}^{N} x_{norm}^{2}(i)logx_{norm}^{2}(i)
+\end{equation}{}
+ where \(x_{norm}\) is the value of the normalized sample signal and \(N\) is the signal length. This is followed by the computation of the normalized average Shannon energy using equation 4 below,
+ 
+ \begin{equation}
+     P_a(t) = \frac{E_s(t)-M(E_s(t))}{S(E_s(t))}
+ \end{equation}{}
+ 
+ where \(M(E_s(t))\) is the mean of \(E_s(t)\) and \(S(E_s(t))\) is the standard deviation of \(E_s(t)\).
+ 
+ \subsubsection{Peak Identification}
+\textcolor{white}{B} \\ 
+ The peaks representing the heart sounds S1 and S2 wil be identified with a function in Matlab called peakdet []. One advantage of using this function is that it is an open source funtion therefore allows one to condition it to best suite their needs. 
+\subsection{Heartbeat Classification}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \section{CONCLUSION}
