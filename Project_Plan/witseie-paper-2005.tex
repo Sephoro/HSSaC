@@ -37,9 +37,10 @@
 \begin{document}
 
 
-\title{DESIGN AND IMPLEMENTATION OF A HEARTBEAT SEGMENTATION AND CLASSIFICATION MODEL}
+%\title{DESIGN AND IMPLEMENTATION OF A HEARTBEAT SEGMENTATION AND CLASSIFICATION MODEL}
+\title{Project Plan for the Design and Implementation of a Heartbeat Segmentation and Classification Model}
 
-\author{Boikanyo Radiokana (1386807) \\ Elias Sepuru (1427726) \\ Group: 19G11 \\ Supervisor: Ellen de Mello Koch
+\author{Boikanyo Radiokana (1386807) \\ Elias Sepuru (1427726) \\ Group: 19G11 \\Supervisor: Ellen de Mello Koch
 \thanks{School of Electrical \& Information Engineering, University of the
 Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa}
 }
@@ -47,13 +48,8 @@ Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\abstract{The purpose of this document is to provide an easy-to-use
-template/style sheet to enable authors to prepare papers in the correct format
-and style for the final year laboratory project. This document may be
-downloaded from the School of Electrical and Information Engineering web site
-and can be used as a template. To ensure conformity of appearance it is
-essential that these instructions are followed. The abstract should be limited
-to 50-200 words, which should concisely summarise the paper.}
+\abstract{This paper presents a  plan  to  design and implement  a  Heartbeat  Segmentation and Classification Model.  The
+model is divided into 3 main sections namely: Preprocessing, Segmentation and Classification.  The preprocessing  stage involves  reducing  noise  from  the  hearbeat signals and conditioning it for segmentation. The signal will be downsampled with a factor ranging from 10 - 20. Segmentation will be performed by computing the signals average Shannon energy. Classification is to be be implemented with machine learning methods such as ANN and RNN. Project management concepts such as work-division and risk management are also taken into consideration.}
 
 \keywords{Classification, Noise, Preprocessing, Segmentation}
 
@@ -78,7 +74,9 @@ The aim of this project is to create a first level screening to detect signs of 
 
 With the excessive noise present in the audio data, it is required that preprocessing methods, capable of removing noise from the data be implemented before execution of further detection methods. Following the denoising process, a method to locate S1 (lub) and S2 (dub) heart sounds as well as segmentation of Normal audio files from the two data sets is required. A machine learning method to classify heartbeat sounds into normal and diseased categories as mentioned above must be implemented.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%
 \subsection{Assumptions}
 The project is to be conducted with the following assumptions:
 
@@ -117,7 +115,7 @@ To combat the issues of noise in real life recordings of heartbeat sounds Liang 
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.52]{systemOverviw.png}
+    \includegraphics[scale = 0.7]{systemOverviw.png}
     \caption{System Overview}
     \label{fig:sysov}
 \end{figure}{}
@@ -150,7 +148,7 @@ Figure \ref{fig:pre} summarises the preprocessing phase.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.8]{Project_Plan/preproc.png}
+    \includegraphics[scale=0.7]{Project_Plan/preproc.png}
     \caption{Flow diagram of the preprocessing phase}
     \label{fig:pre}
 \end{figure}{}
@@ -206,7 +204,7 @@ R_{sq} & \begin{tabular}[c]{@{}l@{}}Square of the array of the sorted\\ segments
 The features shown in table \ref{tab:features} are to be carefully selected in order to cater and distinguish for the different categories in Dataset A and Dataset B.
 
 For training, two models, ANN and RNN are chosen. ANN is chosen due to its good ability to recognise patterns \cite{demuth2014neural}. The RNN is also chosen for its great pattern recognition and its ability to handle many-to-many predictions problems \cite{he2019automatic}.
-\newpage
+%\newpage
 \section{TESTING}
 In order to allow for testing the machine learning algorithms will be trained according to 7:3 ratio. This means that 70\% of the audio data will be used for training whilst the other 30\% will be for testing to generate the F-score, Youden’s Index and the Discriminant Power.
 
@@ -237,7 +235,7 @@ will be allocated two different techniques. Each team member will then be assign
  & 2 & Boikanyo \\ \hline
 \multirow{2}{*}{Segmentation} & 1 & Elias \\ \cline{2-3} 
  & 2 & Boikanyo \\ \hline
-\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Classification,\\ Training and \\ \\ Testing\end{tabular}} & 1 & Elias \\ \cline{2-3} 
+\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Classification, Training \\ and Testing\end{tabular}} & 1 & Elias \\ \cline{2-3} 
  & 2 & Boikanyo \\ \hline
 Documetation & - & Both \\ \hline
 \end{tabular}
@@ -253,7 +251,7 @@ The project will officially be started on the $15^{th}$ July 2019 following exte
 \begin{tabular}{|c|c|}
 \hline
 \textbf{Completion Date} & \textbf{Milestone} \\ \hline
-15 July 2019 & Project Planning \\ \hline
+15 July 2019 & Project  Planning \\ \hline
 16 July 2019 & Environment Setup \\ \hline
 31 July 2019 & Data Cleansing \\ \hline
 09 Aug 2019 & Segmentation \\ \hline
@@ -302,7 +300,7 @@ Loss of work & \begin{tabular}[c]{@{}l@{}}Not saving copies\\ of completed work\
 \end{tabular}
 }
 \end{table*}
-
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION}
 
@@ -315,11 +313,7 @@ A plan to design and implement a Heartbeat Segmentation and Classification Model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %\nocite{*}
-\newpage
-.
-\newpage
-.
-\newpage
+\onecolumn
 \bibliographystyle{witseie}
 \bibliography{sample}
 
