@@ -18,3 +18,9 @@ Plot(y,fs,x,newfs);
 
 z = Chebyshev(x, newfs);
 Plot(z, newfs)
+
+%% Normalise signal [-1,1]
+
+z_norm = Normalise(y);
+
+Plot(z_norm, newfs)
