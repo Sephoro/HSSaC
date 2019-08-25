@@ -12,15 +12,24 @@ file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atrai
 
 %% Plot signal & or with FFT
 
-Plot(y,fs,x,newfs);
+%Plot(y,fs,x,newfs);
 
 %% Bandpass Chebyshev filter
 
 z = Chebyshev(x, newfs);
-Plot(z, newfs)
+%Plot(z, newfs)
 
 %% Normalise signal [-1,1]
 
 z_norm = Normalise(y);
 
 Plot(z_norm, newfs)
+
+%% DWT
+
+w = wdenoise(z_norm,5, ...
+        'Wavelet', 'db7', ...
+        'DenoisingMethod', 'UniversalThreshold', ...
+        'ThresholdRule', 'Soft');
+    
+ Plot(w,newfs)   
