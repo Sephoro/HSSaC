@@ -32,4 +32,10 @@ w = wdenoise(z_norm,5, ...
         'DenoisingMethod', 'UniversalThreshold', ...
         'ThresholdRule', 'Soft');
     
- Plot(w,newfs)   
+ Plot(w,newfs)  
+ 
+ %% Refiltering using LPF
+ 
+ [w2] = Filter(y, fs);
+ 
+ Plot(w2,newfs);
