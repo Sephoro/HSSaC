@@ -17,13 +17,12 @@ file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atrai
 %% Bandpass Chebyshev filter
 
 z = Chebyshev(x, newfs);
-%Plot(z, newfs)
+
 
 %% Normalise signal [-1,1]
 
 z_norm = Normalise(y);
 
-Plot(z_norm, newfs)
 
 %% DWT
 
@@ -32,10 +31,21 @@ w = wdenoise(z_norm,5, ...
         'DenoisingMethod', 'UniversalThreshold', ...
         'ThresholdRule', 'Soft');
     
- Plot(w,newfs)  
- 
+
+    
  %% Refiltering using LPF
  
  [w2] = Filter(y, fs);
  
  Plot(w2,newfs);
+ 
+ %% Determine Shannon Energy to get envelope
+ 
+ [~, s] = Shannon(w2,newfs);
+ figure;
+ plot(w2);
+ hold on;
+ plot(s, '-r')
+ hold off;
+ 
+ 
