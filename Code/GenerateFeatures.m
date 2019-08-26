@@ -108,5 +108,10 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
     
     PCA = PrincipalCA(coeffs);
     
-        
-    
+     %Means and std's of PCA   
+    stdPCA1 = std(PCA(:,1));
+    stdPCA2 = std(PCA(:,2));
+    stdPCA3 = std(PCA(:,3));
+    meanPCA1 =  mean(PCA(:,1));
+    meanPCA2 = mean(PCA(:,2));
+    meanPCA3 = mean(PCA(:,3));
