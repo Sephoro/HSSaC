@@ -3,8 +3,9 @@ clc
 close all;
 %% load file audio file
 
-file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201101070538.wav';
-[y,fs] = audioread(file);
+file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
+file2 = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_normal/Training B Normal/103_1305031931979_D3.wav';
+[y,fs] = audioread(file2);
 
 %% Downsample signal to 2kHz
 
@@ -42,10 +43,19 @@ w = wdenoise(z_norm,5, ...
  %% Determine Shannon Energy to get envelope
  
  [~, s] = Shannon(w2,newfs);
- figure;
- plot(w2);
- hold on;
- plot(s, '-r')
- hold off;
+
+
+ %% Identify peaks with gradient method
  
- 
+ [peaks, positions]= PeakFind(s);
+
+x_axis = positions( 1:length(positions), 1);
+y_axis = positions(1:length(positions), 2);
+
+figure;
+plot(w2);
+hold on;
+plot(s ,'r','linewidth',1);
+plot(peaks,'y--x');
+hold off;
+
