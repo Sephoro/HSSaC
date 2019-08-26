@@ -89,6 +89,10 @@ hold off;
 [~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
 
 
-%% Locate first S2 and S1
+%% Locate first S1
     
 [S1_sample] = LocateFirstS1(positions, newPositions);
+
+%% Locate the rest of the S1 and S2's
+    
+heartsounds = LocateS1S2(S1_sample,newPositions);
