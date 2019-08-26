@@ -5,7 +5,7 @@ close all;
 
 file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
 file2 = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_normal/Training B Normal/103_1305031931979_D3.wav';
-[y,fs] = audioread(file2);
+[y,fs] = audioread(file);
 
 %% Downsample signal to 2kHz
 
@@ -69,3 +69,9 @@ hold on;
 plot(s ,'r','linewidth',1);
 plot(newPeaks,'y--x');
 hold off;
+
+%% Check for completety missed S1's or S2's
+
+ if isMissedPeaks(newPositions, peaks)
+        1
+ end
