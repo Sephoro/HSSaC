@@ -149,3 +149,5 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
     % Another feature
     ratios = (length(newPositions)/(length(peaks)/100))*100; 
     
+    % Phase 2 features
+    [stdFFTSHA,lenFFTSHA,stdlenFFTSHA,lenstdFFTSHA] = secondPhase(x,newfs);
