@@ -1,6 +1,7 @@
 
 clc
 close all;
+clear;
 %% load file audio file
 
 file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
@@ -22,7 +23,7 @@ z = Chebyshev(x, newfs);
 
 %% Normalise signal [-1,1]
 
-z_norm = Normalise(y);
+z_norm = Normalise(z);
 
 
 %% DWT
@@ -96,3 +97,16 @@ hold off;
 %% Locate the rest of the S1 and S2's
     
 heartsounds = LocateS1S2(S1_sample,newPositions);
+
+%% Features
+    
+    % MFCC
+    
+    [coeffs,~,~,~] = mfcc(w2,newfs,'NumCoeffs',12);
+    
+    % PCA
+    
+    PCA = PrincipalCA(coeffs);
+    
+        
+    
