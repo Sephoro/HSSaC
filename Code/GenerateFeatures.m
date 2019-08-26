@@ -38,7 +38,6 @@ w = wdenoise(z_norm,5, ...
  
  [w2] = Filter(y, fs);
  
- Plot(w2,newfs);
  
  %% Determine Shannon Energy to get envelope
  
@@ -59,3 +58,14 @@ plot(s ,'r','linewidth',1);
 plot(peaks,'y--x');
 hold off;
 
+%% Peak Rejection
+    
+threshold = 0.2;
+[newPeaks, newPositions]= PeakRejection(peaks, positions, threshold,true);
+
+figure;
+plot(w2);
+hold on;
+plot(s ,'r','linewidth',1);
+plot(newPeaks,'y--x');
+hold off;
