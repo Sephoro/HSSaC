@@ -88,3 +88,7 @@ hold off;
 %% Optimize peaks detection
 [~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
 
+
+%% Locate first S2 and S1
+    
+[S1_sample] = LocateFirstS1(positions, newPositions);
