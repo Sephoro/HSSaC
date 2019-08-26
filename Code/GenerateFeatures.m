@@ -151,3 +151,7 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
     
     % Phase 2 features
     [stdFFTSHA,lenFFTSHA,stdlenFFTSHA,lenstdFFTSHA] = secondPhase(x,newfs);
+    
+     % Phase 3 features  
+    posFFT = thirdPhase(w2,newfs);
+    
