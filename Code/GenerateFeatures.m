@@ -84,3 +84,7 @@ hold on;
 plot(s ,'r','linewidth',1);
 plot(newPeaks,'y--x');
 hold off;
+
+%% Optimize peaks detection
+[~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
+
