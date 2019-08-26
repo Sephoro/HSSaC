@@ -118,3 +118,34 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
     
     %Calculate rebuild error
     rebuildError = Error(w,newfs,z_norm, newfs);
+    
+     [~,ev,od] = Intervals(newPositions);
+     
+     if mean(ev) > mean(od)
+        
+        meanS2 = mean(ev);
+        stdS2 = std(ev);
+        
+        meanS1 = mean(od);
+        stdS1 = std(od);
+        
+        [minstdS2,maxstdS2,mmstdS2] = deviations(ev,stdS2);
+        [minstdS1,maxstdS1,mmstdS1] = deviations(od,stdS1);
+        
+     else
+        
+        meanS2 = mean(od);
+        stdS2 = std(od);
+        
+        meanS1 = mean(ev);
+        stdS1 = std(ev);
+        
+        
+        [minstdS2,maxstdS2,mmstdS2] = deviations(od,stdS2);
+        [minstdS1,maxstdS1,mmstdS1] = deviations(ev,stdS1);
+        
+     end
+    
+    % Another feature
+    ratios = (length(newPositions)/(length(peaks)/100))*100; 
+    
