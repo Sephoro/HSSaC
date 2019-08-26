@@ -115,3 +115,6 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
     meanPCA1 =  mean(PCA(:,1));
     meanPCA2 = mean(PCA(:,2));
     meanPCA3 = mean(PCA(:,3));
+    
+    %Calculate rebuild error
+    rebuildError = Error(w,newfs,z_norm, newfs);
