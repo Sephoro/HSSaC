@@ -8,6 +8,11 @@ file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atrai
 file2 = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_normal/Training B Normal/103_1305031931979_D3.wav';
 [y,fs] = audioread(file2);
 
+%Plot and save figures
+Figures(y, 'OriginalSignal');
+FFTPlot (y,fs, 'fftOrig');
+
+
 %% Downsample signal to 2kHz
 
 [x,newfs] = Downsample(y,fs);
@@ -39,6 +44,10 @@ w = wdenoise(z_norm,5, ...
  
  [w2] = Filter(y, fs);
  
+ %Plot and save figures
+ Figures(w2, 'DenoisedSignal');
+ FFTPlot (w2,newfs, 'fftDenoised');
+ 
  
  %% Determine Shannon Energy to get envelope
  
@@ -52,24 +61,11 @@ w = wdenoise(z_norm,5, ...
 x_axis = positions( 1:length(positions), 1);
 y_axis = positions(1:length(positions), 2);
 
-% figure;
-% plot(w2);
-% hold on;
-% plot(s ,'r','linewidth',1);
-% plot(peaks,'y--x');
-% hold off;
 
 %% Peak Rejection
     
 threshold = 0.2;
 [newPeaks, newPositions]= PeakRejection(peaks, positions, threshold,true);
-
-% figure;
-% plot(w2);
-% hold on;
-% plot(s ,'r','linewidth',1);
-% plot(newPeaks,'y--x');
-% hold off;
 
 %% Check for completety missed S1's or S2's
 
@@ -79,12 +75,9 @@ if isMissedPeaks(newPositions, peaks)
     
 end
 
-% figure;
-% plot(w2);
-% hold on;
-% plot(s ,'r','linewidth',1);
-% plot(newPeaks,'y--x');
-% hold off;
+signals = [w2,s,newPeaks];
+Figures(signals,'PeakIdentification')
+
 
 %% Optimize peaks detection
 [~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);

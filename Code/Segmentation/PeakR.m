@@ -15,14 +15,6 @@ if ~isempty(positions)
     pos = positions(:,2)>=threshold;
     positions = positions(pos,:);
     
-    %Remove the first and last peak if there are more than 5 peaks
-    
-    % if length(positions) > 5
-    %
-    %     positions(1,:) = [];
-    %     positions(length(positions),:) = [];
-    %
-    % end
     peaks = nan(length(peaks), 1);
     
     % Update the peaks for plotting

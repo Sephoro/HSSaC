@@ -1,14 +1,10 @@
-function [] = Figures(signal, name)
+function [] = FFTPlot (signal,fs, name)
 
-pic = plot(signal);
-
-[m , n]= size(signal);
-
-if n == 3
-    hold on;
-    plot(signal(:,2) ,'r','linewidth',1);
-    plot(signal(:,3),'y--x');
-end
+   % FFT
+    [y_fft, freq] = FFT(signal,fs);
+    pic = plot(freq, y_fft(1:length(freq)));
+    xlim([0 500])
+    
 
 set(gcf,'Position',[100 100 571, 251]);
 
