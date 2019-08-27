@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+import os
 
 
 class Ui_MainWindow(object):
@@ -199,6 +200,16 @@ class Ui_MainWindow(object):
         self.evaluateBtn.setText(_translate("MainWindow", "Evaluate Model"))
         self.sig2H_2.setText(_translate("MainWindow", "Detected Peaks"))
         self.sig2H_3.setText(_translate("MainWindow", "Extracted Features"))
+        
+        
+        #implemntation of features in gui
+        self.play1Btn.clicked.connect(self.playOriginalsignal)
+    
+    #Play the original signal    
+    def playOriginalsignal(self):
+                
+        sound = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'
+        os.system("aplay " + sound +"&")
 
 
 
