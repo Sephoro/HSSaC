@@ -52,24 +52,24 @@ w = wdenoise(z_norm,5, ...
 x_axis = positions( 1:length(positions), 1);
 y_axis = positions(1:length(positions), 2);
 
-figure;
-plot(w2);
-hold on;
-plot(s ,'r','linewidth',1);
-plot(peaks,'y--x');
-hold off;
+% figure;
+% plot(w2);
+% hold on;
+% plot(s ,'r','linewidth',1);
+% plot(peaks,'y--x');
+% hold off;
 
 %% Peak Rejection
     
 threshold = 0.2;
 [newPeaks, newPositions]= PeakRejection(peaks, positions, threshold,true);
 
-figure;
-plot(w2);
-hold on;
-plot(s ,'r','linewidth',1);
-plot(newPeaks,'y--x');
-hold off;
+% figure;
+% plot(w2);
+% hold on;
+% plot(s ,'r','linewidth',1);
+% plot(newPeaks,'y--x');
+% hold off;
 
 %% Check for completety missed S1's or S2's
 
@@ -79,12 +79,12 @@ if isMissedPeaks(newPositions, peaks)
     
 end
 
-figure;
-plot(w2);
-hold on;
-plot(s ,'r','linewidth',1);
-plot(newPeaks,'y--x');
-hold off;
+% figure;
+% plot(w2);
+% hold on;
+% plot(s ,'r','linewidth',1);
+% plot(newPeaks,'y--x');
+% hold off;
 
 %% Optimize peaks detection
 [~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
