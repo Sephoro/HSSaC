@@ -205,6 +205,7 @@ class Ui_MainWindow(object):
         #implemntation of features in gui
         self.play1Btn.clicked.connect(self.playOriginalsignal)
         self.loadBtn.clicked.connect(self.originalsignal)
+        self.denoiseBtn.clicked.connect(self.Denoisedsignal)
         
     
     #Play the original signal    
@@ -213,7 +214,7 @@ class Ui_MainWindow(object):
         sound = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'
         os.system("aplay " + sound +"&")
         
-    #upload original signal when load button is pressed    
+    #upload original signal and its fft when load button is pressed    
     def originalsignal(self):
            
         pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png")
@@ -223,6 +224,17 @@ class Ui_MainWindow(object):
         pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png")
         pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.fft1.setPixmap(pixmap1)
+    
+    #upload denoised signal  and its fft when denoised button is pressed       
+    def Denoisedsignal(self):
+           
+        pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png")
+        pixmap = pixmap.scaled(pixmap.width(), self.sig2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
+        self.sig2.setPixmap(pixmap)
+        
+        pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png")
+        pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
+        self.fft2.setPixmap(pixmap1)
     
 
 
