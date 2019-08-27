@@ -9,8 +9,8 @@ file2 = '../../../../Dataset/setB/Btraining_normal/Training B Normal/103_1305031
 [y,fs] = audioread(file);
 
 %Plot and save figures
-Figures(y, 'OriginalSignal');
-FFTPlot (y,fs, 'fftOrig');
+%Figures(y, 'OriginalSignal');
+%FFTPlot (y,fs, 'fftOrig');
 
 
 %% Downsample signal to 2kHz
@@ -45,8 +45,8 @@ w = wdenoise(z_norm,5, ...
  [w2] = Filter(y, fs);
  
  %Plot and save figures
- Figures(w2, 'DenoisedSignal');
- FFTPlot (w2,newfs, 'fftDenoised');
+ % Figures(w2, 'DenoisedSignal');
+ % FFTPlot (w2,newfs, 'fftDenoised');
  
  
  %% Determine Shannon Energy to get envelope
@@ -79,12 +79,16 @@ if isMissedPeaks(newPositions, peaks)
     
 end
 
-signals = [w2,s,newPeaks];
-Figures(signals,'PeakIdentification')
+%signals = [w2,s,newPeaks];
+%Figures(signals,'PeakIdentification')
 
 
 %% Optimize peaks detection
 [~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
+
+% Phase 0.1 feature
+posRatio = length(ps)/length(newPositions);
+posRatio =  posRatio -floor(posRatio); 
 
 
 %% Locate first S1
