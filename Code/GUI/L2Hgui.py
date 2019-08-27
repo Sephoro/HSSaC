@@ -206,6 +206,7 @@ class Ui_MainWindow(object):
         self.play1Btn.clicked.connect(self.playOriginalsignal)
         self.loadBtn.clicked.connect(self.originalsignal)
         self.denoiseBtn.clicked.connect(self.Denoisedsignal)
+        self.peaksBtn.clicked.connect(self.detectedPeaks)
         
     
     #Play the original signal    
@@ -235,6 +236,13 @@ class Ui_MainWindow(object):
         pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png")
         pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.fft2.setPixmap(pixmap1)
+        
+    #upload the peaks detected signal      
+    def detectedPeaks(self):
+           
+        pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png")
+        pixmap = pixmap.scaled(pixmap.width(), self.peaksgraph.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
+        self.peaksgraph.setPixmap(pixmap)
     
 
 
