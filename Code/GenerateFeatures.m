@@ -7,12 +7,12 @@ clear;
 file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
 file2 = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_normal/Training B Normal/103_1305031931979_D3.wav';
 [y,fs] = audioread(file2);
-Figures(y, 'test1');
+%Figures(y, 'test1');
 
 %% Downsample signal to 2kHz
 
 [x,newfs] = Downsample(y,fs);
-Figures(y, 'test2');
+%Figures(y, 'test2');
 
 %% Plot signal & or with FFT
 
@@ -21,7 +21,7 @@ Figures(y, 'test2');
 %% Bandpass Chebyshev filter
 
 z = Chebyshev(x, newfs);
-Figures(y, 'test3');
+%Figures(y, 'test3');
 
 
 %% Normalise signal [-1,1]
