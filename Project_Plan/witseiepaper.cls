@@ -525,9 +525,9 @@ page \thepage \space undefined}}%
 \def\@maketitle{{\parskip 0pt \newpage \null
 %   \advance \rightskip by 15mm
 %   \advance \leftskip  by 15mm
-   {\fontfamily{ptm}\fontseries{b}\fontsize{12pt}{\f@baselineskip}\selectfont \@title \par}
+   {\centering \fontfamily{ptm}\fontseries{b}\fontsize{24pt}{\f@baselineskip}\selectfont \@title \par}
    \vskip 12pt {\lineskip .5em
-   {\fontfamily{ptm}\fontseries{b}\fontsize{10pt}{\f@baselineskip}\selectfont \@author}\par}
+   {\centering\fontfamily{ptm}\fontseries{b}\fontsize{12pt}{\f@baselineskip}\selectfont \@author}\par}
    \noindent{\itshape\small\vskip 12pt {\sl \@thanks}\par}
    \noindent{\small\vskip 27pt {\fontfamily{ptm}\fontseries{b}\fontsize{9pt}{\f@baselineskip}\selectfont Abstract:} \@abstract\par}
    \noindent{\small\vskip 9pt {\fontfamily{ptm}\fontseries{b}\fontsize{9pt}{\f@baselineskip}\selectfont Key words:} \@keywords\par}
