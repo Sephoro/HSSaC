@@ -204,14 +204,26 @@ class Ui_MainWindow(object):
         
         #implemntation of features in gui
         self.play1Btn.clicked.connect(self.playOriginalsignal)
+        self.loadBtn.clicked.connect(self.originalsignal)
+        
     
     #Play the original signal    
     def playOriginalsignal(self):
                 
         sound = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'
         os.system("aplay " + sound +"&")
-
-
+        
+    #upload original signal when load button is pressed    
+    def originalsignal(self):
+           
+        pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png")
+        pixmap = pixmap.scaled(pixmap.width(), self.sig1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
+        self.sig1.setPixmap(pixmap)
+        
+        pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png")
+        pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
+        self.fft1.setPixmap(pixmap1)
+    
 
 
 if __name__ == "__main__":
