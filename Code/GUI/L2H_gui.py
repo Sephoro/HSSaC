@@ -87,10 +87,9 @@ class Ui_MainWindow(object):
         self.featuresBtn.setStyleSheet("background-color: rgb(115, 210, 22);")
         self.featuresBtn.setObjectName("featuresBtn")
         self.classificationH = QtWidgets.QLineEdit(self.centralwidget)
-        self.classificationH.setGeometry(QtCore.QRect(900, 830, 141, 25))
+        self.classificationH.setGeometry(QtCore.QRect(870, 700, 151, 25))
         self.classificationH.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font: 75 11pt \"Ubuntu Condensed\";\n"
-"font: 15pt \"Ubuntu\";")
+"font: 17pt \"Ubuntu\";")
         self.classificationH.setObjectName("classificationH")
         self.play2Btn = QtWidgets.QPushButton(self.centralwidget)
         self.play2Btn.setGeometry(QtCore.QRect(480, 390, 131, 25))
@@ -107,38 +106,38 @@ class Ui_MainWindow(object):
 "font: 13pt \"Ubuntu\";")
         self.sig2H.setObjectName("sig2H")
         self.selectmodelH = QtWidgets.QLineEdit(self.centralwidget)
-        self.selectmodelH.setGeometry(QtCore.QRect(650, 850, 113, 25))
+        self.selectmodelH.setGeometry(QtCore.QRect(650, 790, 113, 25))
         self.selectmodelH.setStyleSheet("color: rgb(238, 238, 236);\n"
 "font: 13pt \"Ubuntu\";")
         self.selectmodelH.setObjectName("selectmodelH")
         self.testaccuracyH = QtWidgets.QLineEdit(self.centralwidget)
-        self.testaccuracyH.setGeometry(QtCore.QRect(1030, 880, 111, 25))
+        self.testaccuracyH.setGeometry(QtCore.QRect(970, 840, 111, 25))
         self.testaccuracyH.setStyleSheet("color: rgb(238, 238, 236);\n"
 "font: 13pt \"Ubuntu\";")
         self.testaccuracyH.setObjectName("testaccuracyH")
         self.classH = QtWidgets.QLineEdit(self.centralwidget)
-        self.classH.setGeometry(QtCore.QRect(850, 880, 113, 25))
+        self.classH.setGeometry(QtCore.QRect(970, 780, 91, 25))
         self.classH.setStyleSheet("color: rgb(238, 238, 236);\n"
 "font: 13pt \"Ubuntu\";")
         self.classH.setObjectName("classH")
         self.accuracy = QtWidgets.QLineEdit(self.centralwidget)
-        self.accuracy.setGeometry(QtCore.QRect(1030, 930, 111, 25))
+        self.accuracy.setGeometry(QtCore.QRect(1110, 830, 111, 25))
         self.accuracy.setStyleSheet("background-color: rgb(186, 189, 182);")
         self.accuracy.setObjectName("accuracy")
         self.class_2 = QtWidgets.QLineEdit(self.centralwidget)
-        self.class_2.setGeometry(QtCore.QRect(850, 930, 151, 25))
+        self.class_2.setGeometry(QtCore.QRect(1070, 780, 151, 25))
         self.class_2.setStyleSheet("background-color: rgb(186, 189, 182);")
         self.class_2.setPlaceholderText("")
         self.class_2.setObjectName("class_2")
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(650, 880, 121, 25))
+        self.comboBox.setGeometry(QtCore.QRect(790, 790, 121, 25))
         self.comboBox.setStyleSheet("background-color: rgb(186, 189, 182);")
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.evaluateBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.evaluateBtn.setGeometry(QtCore.QRect(650, 930, 141, 25))
+        self.evaluateBtn.setGeometry(QtCore.QRect(790, 830, 121, 41))
         self.evaluateBtn.setStyleSheet("background-color: rgb(164, 0, 0);\n"
 "")
         self.evaluateBtn.setObjectName("evaluateBtn")
@@ -148,20 +147,11 @@ class Ui_MainWindow(object):
         self.logo.setPixmap(QtGui.QPixmap("heartpic.png"))
         self.logo.setScaledContents(True)
         self.logo.setObjectName("logo")
-        self.features = QtWidgets.QTableView(self.centralwidget)
-        self.features.setGeometry(QtCore.QRect(650, 720, 571, 91))
-        self.features.setStyleSheet("background-color: rgb(46, 52, 54);")
-        self.features.setObjectName("features")
         self.sig2H_2 = QtWidgets.QLineEdit(self.centralwidget)
         self.sig2H_2.setGeometry(QtCore.QRect(40, 690, 131, 25))
         self.sig2H_2.setStyleSheet("color: rgb(238, 238, 236);\n"
 "font: 13pt \"Ubuntu\";")
         self.sig2H_2.setObjectName("sig2H_2")
-        self.sig2H_3 = QtWidgets.QLineEdit(self.centralwidget)
-        self.sig2H_3.setGeometry(QtCore.QRect(650, 690, 151, 25))
-        self.sig2H_3.setStyleSheet("color: rgb(238, 238, 236);\n"
-"font: 13pt \"Ubuntu\";")
-        self.sig2H_3.setObjectName("sig2H_3")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1259, 22))
@@ -199,9 +189,8 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(2, _translate("MainWindow", "XGBoost"))
         self.evaluateBtn.setText(_translate("MainWindow", "Evaluate Model"))
         self.sig2H_2.setText(_translate("MainWindow", "Detected Peaks"))
-        self.sig2H_3.setText(_translate("MainWindow", "Extracted Features"))
         
-        
+                
         #implemntation of features in gui
         self.play1Btn.clicked.connect(self.playOriginalsignal)
         self.loadBtn.clicked.connect(self.originalsignal)
@@ -243,7 +232,8 @@ class Ui_MainWindow(object):
         pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png")
         pixmap = pixmap.scaled(pixmap.width(), self.peaksgraph.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.peaksgraph.setPixmap(pixmap)
-    
+
+
 
 
 if __name__ == "__main__":

@@ -4,9 +4,9 @@ close all;
 clear;
 %% load file audio file
 
-file = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
-file2 = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_normal/Training B Normal/103_1305031931979_D3.wav';
-[y,fs] = audioread(file2);
+file = '../../../../Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
+file2 = '../../../../Dataset/setB/Btraining_normal/Training B Normal/103_1305031931979_D3.wav';
+[y,fs] = audioread(file);
 
 %Plot and save figures
 Figures(y, 'OriginalSignal');
@@ -66,6 +66,10 @@ y_axis = positions(1:length(positions), 2);
     
 threshold = 0.2;
 [newPeaks, newPositions]= PeakRejection(peaks, positions, threshold,true);
+
+% To be use just shortly
+   ps =  newPositions;
+    
 
 %% Check for completety missed S1's or S2's
 
@@ -150,9 +154,9 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
     
     
     
-    features = [stdPCA1, stdPCA2, stdPCA3, meanPCA1, meanPCA2, ...
+    features_ = [stdPCA1, stdPCA2, stdPCA3, meanPCA1, meanPCA2, ...
             meanPCA3, meanS1,meanS2, stdS1,stdS2, rebuildError, ...
             ratios,stdFFTSHA,lenFFTSHA,stdlenFFTSHA,lenstdFFTSHA, ...
             posFFT,minstdS1,maxstdS1,mmstdS1,minstdS2 ,maxstdS2 ...
-            ,mmstdS2];
+            ,mmstdS2,posRatio];
     

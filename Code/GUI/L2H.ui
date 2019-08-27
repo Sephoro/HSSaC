@@ -252,16 +252,15 @@ background-color: rgb(46, 52, 54);</string>
    <widget class="QLineEdit" name="classificationH">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>830</y>
-      <width>141</width>
+      <x>870</x>
+      <y>700</y>
+      <width>151</width>
       <height>25</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(238, 238, 236);
-font: 75 11pt &quot;Ubuntu Condensed&quot;;
-font: 15pt &quot;Ubuntu&quot;;</string>
+font: 17pt &quot;Ubuntu&quot;;</string>
     </property>
     <property name="text">
      <string>Classification</string>
@@ -321,7 +320,7 @@ font: 13pt &quot;Ubuntu&quot;;</string>
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>850</y>
+      <y>790</y>
       <width>113</width>
       <height>25</height>
      </rect>
@@ -337,8 +336,8 @@ font: 13pt &quot;Ubuntu&quot;;</string>
    <widget class="QLineEdit" name="testaccuracyH">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>880</y>
+      <x>970</x>
+      <y>840</y>
       <width>111</width>
       <height>25</height>
      </rect>
@@ -354,9 +353,9 @@ font: 13pt &quot;Ubuntu&quot;;</string>
    <widget class="QLineEdit" name="classH">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>880</y>
-      <width>113</width>
+      <x>970</x>
+      <y>780</y>
+      <width>91</width>
       <height>25</height>
      </rect>
     </property>
@@ -371,8 +370,8 @@ font: 13pt &quot;Ubuntu&quot;;</string>
    <widget class="QLineEdit" name="accuracy">
     <property name="geometry">
      <rect>
-      <x>1030</x>
-      <y>930</y>
+      <x>1110</x>
+      <y>830</y>
       <width>111</width>
       <height>25</height>
      </rect>
@@ -387,8 +386,8 @@ font: 13pt &quot;Ubuntu&quot;;</string>
    <widget class="QLineEdit" name="class_2">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>930</y>
+      <x>1070</x>
+      <y>780</y>
       <width>151</width>
       <height>25</height>
      </rect>
@@ -403,8 +402,8 @@ font: 13pt &quot;Ubuntu&quot;;</string>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>880</y>
+      <x>790</x>
+      <y>790</y>
       <width>121</width>
       <height>25</height>
      </rect>
@@ -431,10 +430,10 @@ font: 13pt &quot;Ubuntu&quot;;</string>
    <widget class="QPushButton" name="evaluateBtn">
     <property name="geometry">
      <rect>
-      <x>650</x>
-      <y>930</y>
-      <width>141</width>
-      <height>25</height>
+      <x>790</x>
+      <y>830</y>
+      <width>121</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -464,19 +463,6 @@ font: 13pt &quot;Ubuntu&quot;;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QTableView" name="features">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>720</y>
-      <width>571</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(46, 52, 54);</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="sig2H_2">
     <property name="geometry">
      <rect>
@@ -492,23 +478,6 @@ font: 13pt &quot;Ubuntu&quot;;</string>
     </property>
     <property name="text">
      <string>Detected Peaks</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="sig2H_3">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>690</y>
-      <width>151</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(238, 238, 236);
-font: 13pt &quot;Ubuntu&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Extracted Features</string>
     </property>
    </widget>
   </widget>
