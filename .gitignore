@@ -8,3 +8,5 @@
 *.ui
 # Ignore CSV files
 *.csv
+# Ignore pickled models
+*.pkl
