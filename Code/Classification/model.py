@@ -1,5 +1,6 @@
 import pickle
 import numpy as np
+import pandas as pd
 
 def ANN():
 
@@ -20,6 +21,16 @@ def SVM():
 
     return SVM
 
+def XGB():
+
+    # Load and return XGB model
+
+    xgb = open('../Models/XGB_B.pkl', 'rb')
+    xgb = pickle.load(xgb)
+
+    return xgb
+
+
 
 
 p = np.array([[0.60558722, 0.44040524, 0.59096055 ,0.49732805 ,0.59163445 ,0.37739791,
@@ -39,7 +50,16 @@ c = np.array([[0.64204744, 0.36595563, 0.53638035, 0.44564641, 0.55043321, 0.365
                0.19629566, 0.12413136, 0.35104354 ,0.2325801 , 0.09813565, 0.64117894,
                0.15793424, 0.15151515, 0.03948359 ,0.01165305, 0.34782609, 0.31875375,
                0.24327501, 0.31568188, 0.19103469, 0.85953878, 0.23719107, 0.31241966]])
-b = SVM()
-print(b.predict_proba(p))
+
+df = pd.DataFrame.from_records(p)
+df.columns =  ['stdPCA1', 'stdPCA2', 'stdPCA3', 'meanPCA1', 'meanPCA2', 
+               'meanPCA3', 'meanS1', 'meanS2', 'stdS1', 'stdS2',
+               'rebuilError', 'ratios', 'stdFFTSHA', 'lenFFTSHA', 
+               'stdlenFFTSHA', 'lenstdFFTSHA', 'posFFT', 'maxstdS1',
+               'maxstdS2', 'mmstdS1', 'mmstdS2', 'posRatio', 
+               'stdWavelet', 'meanWavelet']
+b = XGB()
+#print(df)
+print(b.predict_proba(df))
 
 
