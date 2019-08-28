@@ -1,3 +1,4 @@
+import pandas as pd
 import matlab.engine
 
 
@@ -7,4 +8,8 @@ def getFeatures(filename):
     features = eng.GenerateFeatures(filename)
     return features
 
-print(getFeatures('../../../../Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'))
+df = pd.read_csv('../Dataset/heartbeatFeaturesB4.csv')
+toremove = df.shape[1] -1 
+df = df.iloc[:, 0:toremove]
+print(df.head())
+#print(getFeatures('../../../../Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'))
