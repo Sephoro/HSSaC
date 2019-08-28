@@ -23,10 +23,9 @@ def getOriginalInputs(filename):
     
     # Exclude the labels, not necessary
     X = df.iloc[0:3,0:26]
-    # X[['maxstdS1','maxstdS2','mmstdS1','mmstdS2']] = df[['maxstdS1','maxstdS2','mmstdS1','mmstdS2']]
-    # X[['posRatio','stdWavelet','meanWavelet']] = df[['posRatio','stdWavelet','meanWavelet']]
 
     return X
+
 def normalise(filename, dataset):
     
     # Normalise and return ready for classification
@@ -36,13 +35,15 @@ def normalise(filename, dataset):
     print(b)
     # Concate and ready for normalisation
     b = np.concatenate((a,b))
-    # print(X)
+    print('\n\n')
+    print(b)
     # Normalise
-    # min_max_scaler = MinMaxScaler()
-    # x_scaled = min_max_scaler.fit_transform(X)
-    # X = pd.DataFrame(x_scaled)
-    # x =  X [0,0:26]
-    return b
+    min_max_scaler = MinMaxScaler()
+    x_scaled = min_max_scaler.fit_transform(b)
+    x = pd.DataFrame(x_scaled)
+    
+    # The top one is the one
+    return x.iloc[0:1,0:26]
 
 
 
@@ -51,15 +52,3 @@ d = '../Dataset/heartbeatFeaturesB4.csv'
 
 X = normalise(f,d)
 print(X)
-
-# a = getFeatures('../../../../Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav')
-# filename = '../Dataset/heartbeatFeaturesB4.csv'
-# b = getOriginalInputs(filename).values
-# print(b)
-# print('\n\n\n')
-# b = np.concatenate((a, b))
-
-# print(a)
-# print('\n\n\n')
-# print(b)
-# print(b.shape)
