@@ -50,7 +50,7 @@ function [features_] = GenerateFeatures(file)
     
 % Refiltering using LPF
  
-    [w2] = Filter(y, fs);
+    w2 = Filter(w, fs);
  
     %Plot and save figures
         %Figures(w2, 'DenoisedSignal');
@@ -127,7 +127,7 @@ function [features_] = GenerateFeatures(file)
         meanPCA3 = mean(PCA(:,3));
     
     %Calculate rebuild error
-    
+        
         rebuildError = Error(w,newfs,z_norm, newfs);
     
          [~,ev,od] = Intervals(newPositions);
