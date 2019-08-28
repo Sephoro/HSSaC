@@ -38,6 +38,16 @@ w = wdenoise(z_norm,5, ...
         'DenoisingMethod', 'UniversalThreshold', ...
         'ThresholdRule', 'Soft');
     
+    % Phase 0.9 Features
+    
+    [cf, cl] = wavedec(z_norm,6, 'db6');
+
+    ww = appcoef(cf,cl,'db6',6);
+    
+    % Get average and std of wavelet approximation of the signal
+    meanWavelet = mean(ww);
+    stdWavelet = std(ww);
+    
 
     
  %% Refiltering using LPF
@@ -67,7 +77,7 @@ y_axis = positions(1:length(positions), 2);
 threshold = 0.2;
 [newPeaks, newPositions]= PeakRejection(peaks, positions, threshold,true);
 
-% To be use just shortly
+% To be used just shortly
    ps =  newPositions;
     
 
@@ -162,5 +172,5 @@ heartsounds = LocateS1S2(S1_sample,newPositions);
             meanPCA3, meanS1,meanS2, stdS1,stdS2, rebuildError, ...
             ratios,stdFFTSHA,lenFFTSHA,stdlenFFTSHA,lenstdFFTSHA, ...
             posFFT,minstdS1,maxstdS1,mmstdS1,minstdS2 ,maxstdS2 ...
-            ,mmstdS2,posRatio];
+            ,mmstdS2,posRatio,stdWavelet, meanWavelet];
     
