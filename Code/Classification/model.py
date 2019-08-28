@@ -16,10 +16,10 @@ def SVM():
 
     # Load and return ANN model
 
-    SVM = open('../Models/SVM_B.pkl', 'rb')
-    SVM = pickle.load(SVM)
+    svm = open('../Models/SVM_B.pkl', 'rb')
+    svm = pickle.load(svm)
 
-    return SVM
+    return svm
 
 def XGB():
 
@@ -58,7 +58,7 @@ df.columns =  ['stdPCA1', 'stdPCA2', 'stdPCA3', 'meanPCA1', 'meanPCA2',
                'stdlenFFTSHA', 'lenstdFFTSHA', 'posFFT', 'maxstdS1',
                'maxstdS2', 'mmstdS1', 'mmstdS2', 'posRatio', 
                'stdWavelet', 'meanWavelet']
-b = ANN()
+b = SVM()
 #print(df)
 print(b.predict(df))
 
