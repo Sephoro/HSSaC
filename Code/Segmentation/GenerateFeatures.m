@@ -50,7 +50,7 @@ function [features_] = GenerateFeatures(file)
     
 % Refiltering using LPF
  
-    w2 = Filter(w, fs);
+    w2 = Filter(w, newfs);
  
     %Plot and save figures
         %Figures(w2, 'DenoisedSignal');
