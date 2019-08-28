@@ -4,7 +4,7 @@ import matlab.engine
 from sklearn.preprocessing import MinMaxScaler
 
 
-def getFeatures(filename):
+def getRawFeatures(filename):
     
     #Generate initial feature vector of filename
 
@@ -26,17 +26,17 @@ def getOriginalInputs(filename):
 
     return X
 
-def normalise(filename, dataset):
+def generateFeatures(filename, dataset):
     
     # Normalise and return ready for classification
-    a = getFeatures(filename)
+    a = getRawFeatures(filename)
     b = getOriginalInputs(dataset).values
-    print(a)
-    print(b)
+    # print(a)
+    # print(b)
     # Concate and ready for normalisation
     b = np.concatenate((a,b))
-    print('\n\n')
-    print(b)
+    # print('\n\n')
+    # print(b)
     # Normalise
     min_max_scaler = MinMaxScaler()
     x_scaled = min_max_scaler.fit_transform(b)
@@ -50,5 +50,5 @@ def normalise(filename, dataset):
 f = '../../../../Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'
 d = '../Dataset/heartbeatFeaturesB4.csv'
 
-X = normalise(f,d)
+X = generateFeatures(f,d)
 print(X)

@@ -6,3 +6,5 @@
 *.eps
 #ignore gui
 *.ui
+# Ignore CSV files
+*.csv
