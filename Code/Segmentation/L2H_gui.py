@@ -190,7 +190,7 @@ class Ui_MainWindow(object):
         self.accuracy.setPlaceholderText(_translate("MainWindow", "%"))
         self.comboBox.setItemText(0, _translate("MainWindow", "ANN"))
         self.comboBox.setItemText(1, _translate("MainWindow", "SVM"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "XGBoost"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "XGB"))
         self.evaluateBtn.setText(_translate("MainWindow", "Evaluate Model"))
         self.sig2H_2.setText(_translate("MainWindow", "Detected Peaks"))
         
@@ -200,6 +200,7 @@ class Ui_MainWindow(object):
         self.loadBtn.clicked.connect(self.originalsignal)
         self.denoiseBtn.clicked.connect(self.Denoisedsignal)
         self.peaksBtn.clicked.connect(self.detectedPeaks)
+        self.evaluateBtn.clicked.connect(self.evaluateModel)
     
     #load directory of file
     def loadDirectory(self):
@@ -224,7 +225,7 @@ class Ui_MainWindow(object):
         pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png")
         pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.fft1.setPixmap(pixmap1)
-              
+                      
     
     #upload denoised signal  and its fft when denoised button is pressed       
     def Denoisedsignal(self):
@@ -239,6 +240,7 @@ class Ui_MainWindow(object):
         pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png")
         pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.fft2.setPixmap(pixmap1)
+
         
     #upload the peaks detected signal      
     def detectedPeaks(self):
@@ -246,6 +248,13 @@ class Ui_MainWindow(object):
         pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png")
         pixmap = pixmap.scaled(pixmap.width(), self.peaksgraph.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.peaksgraph.setPixmap(pixmap)
+        
+    def evaluateModel(self):
+            
+        model = (str(self.comboBox.currentText()))
+        class_, confidence = self.clf_.classify(model)
+        print(class_)
+        print(confidence)
 
 
 
