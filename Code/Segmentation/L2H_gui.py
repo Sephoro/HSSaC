@@ -253,8 +253,8 @@ class Ui_MainWindow(object):
             
         model = (str(self.comboBox.currentText()))
         class_, confidence = self.clf_.classify(model)
-        print(class_)
-        print(confidence)
+        self.class_2.setText(class_)
+        self.accuracy.setText(str(float("{0:.2f}".format(confidence))))
 
 
 

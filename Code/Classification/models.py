@@ -1,11 +1,12 @@
 import pickle
+import keras
 
 def ANN():
 
     # Load and return ANN model
 
-    ann = open('../Models/ANN_B_P2.pkl', 'rb')
-    ann = pickle.load(ann)
+    ann = keras.models.load_model('../Models/ANN_B.h5')
+   
 
     return ann
 

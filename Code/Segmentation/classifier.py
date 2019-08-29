@@ -29,7 +29,7 @@ class Classifier:
         if self.modelName == 'ANN':
             ANN = md.ANN()
             result = ANN.predict_proba(self.featureVector)
-            print(result)
+            #print(result)
 
         elif self.modelName == 'XGB':
 
@@ -40,7 +40,7 @@ class Classifier:
 
             SVM = md.SVM()
             result = SVM.predict_proba(self.featureVector)
-            print(result)
+            #print(result)
     
         confidence = max(result[0])
         class_ = (classes[np.where(result[0] ==  confidence)])[0]
