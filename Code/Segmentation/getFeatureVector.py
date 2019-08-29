@@ -32,8 +32,27 @@ def generateFeatures(filename, dataset):
     a = getRawFeatures(filename)
     b = getOriginalInputs(dataset).values
     b = np.concatenate((a,b))
+
     min_max_scaler = MinMaxScaler()
+
     x_scaled = min_max_scaler.fit_transform(b)
     x = pd.DataFrame(x_scaled)
 
-    return x.iloc[0:1,0:26]
+    # Rename the columns correctly
+    x.columns = ['stdPCA1', 'stdPCA2', 'stdPCA3', 'meanPCA1', 
+                 'meanPCA2', 'meanPCA3', 'meanS1', 'meanS2', 
+                 'stdS1', 'stdS2','rebuilError', 'ratios','stdFFTSHA' ,
+                 'lenFFTSHA', 'stdlenFFTSHA' ,'lenstdFFTSHA' ,'posFFT',
+                 'minstdS1', 'maxstdS1', 'mmstdS1', 'minstdS2' , 'maxstdS2',
+                 'mmstdS2','posRatio', 'stdWavelet', 'meanWavelet']
+    
+    # This features are only for dataset B
+    # TODO: Cater for both datasets
+    print('\n\n')
+    print(x)
+    features = x.iloc[:,0:17]
+    features[['maxstdS1', 'maxstdS2', 'mmstdS1', 'mmstdS2']] = x[['maxstdS1', 'maxstdS2','mmstdS1', 'mmstdS2']]
+    features[['posRatio','stdWavelet','meanWavelet']] = x[['posRatio','stdWavelet','meanWavelet']]
+    
+    # The first element is the desired one
+    return features.iloc[0:1,:]
