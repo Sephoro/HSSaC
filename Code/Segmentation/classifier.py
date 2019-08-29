@@ -10,13 +10,12 @@ class Classifier:
        
         self.datasetDir = '../Dataset/heartbeatFeaturesB4.csv'
     
-    def getFeatures(self, filedir):
+    def generateFeatures(self, filedir):
 
         self.filedir = filedir
 
         self.featureVector = generateFeatures(self.filedir,self.datasetDir)
 
-        # return self.featureVector
     
     def classify(self,modelName):
         
