@@ -48,8 +48,7 @@ def generateFeatures(filename, dataset):
     
     # This features are only for dataset B
     # TODO: Cater for both datasets
-    print('\n\n')
-    print(x)
+    
     features = x.iloc[:,0:17]
     features[['maxstdS1', 'maxstdS2', 'mmstdS1', 'mmstdS2']] = x[['maxstdS1', 'maxstdS2','mmstdS1', 'mmstdS2']]
     features[['posRatio','stdWavelet','meanWavelet']] = x[['posRatio','stdWavelet','meanWavelet']]
