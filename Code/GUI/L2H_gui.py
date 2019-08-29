@@ -8,10 +8,14 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
+import sys
+sys.path.append('../Segmentation')
+from classifier import Classifier as clf
 
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def setupUi(self, MainWindow, clf_):
+        self.clf_ = clf_
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1259, 1016)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
@@ -196,7 +200,13 @@ class Ui_MainWindow(object):
         self.loadBtn.clicked.connect(self.originalsignal)
         self.denoiseBtn.clicked.connect(self.Denoisedsignal)
         self.peaksBtn.clicked.connect(self.detectedPeaks)
+    
+    #load directory of file
+    def loadDirectory(self):
+        filedir = self.directory.text()
+        print(filedir)
         
+        return filedir    
     
     #Play the original signal    
     def playOriginalsignal(self):
@@ -238,9 +248,10 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+    clf_ = clf()
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui.setupUi(MainWindow,clf_)
     MainWindow.show()
     sys.exit(app.exec_())
