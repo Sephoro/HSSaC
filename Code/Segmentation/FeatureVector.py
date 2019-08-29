@@ -9,8 +9,8 @@ def getRawFeatures(filename):
     #Generate initial feature vector of filename
 
     eng = matlab.engine.start_matlab()
-    features = eng.GenerateFeatures(filename)
-
+    future  = eng.GenerateFeatures(filename,async=True) #background=True
+    features = future.result()
     return features
 
 def getOriginalInputs(filename):
