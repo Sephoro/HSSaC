@@ -217,7 +217,8 @@ class Ui_MainWindow(object):
         
     #upload original signal and its fft when load button is pressed  & send dir to features generator  
     def originalsignal(self):
-            
+        
+        
         pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png")
         pixmap = pixmap.scaled(pixmap.width(), self.sig1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.sig1.setPixmap(pixmap)
