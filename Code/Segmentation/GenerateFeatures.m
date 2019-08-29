@@ -10,8 +10,8 @@ function [features_] = GenerateFeatures(file)
     [y,fs] = audioread(file);
 
     %Plot and save figures
-        Figures(y, 'OriginalSignal');
-        FFTPlot (y,fs, 'fftOrig');
+        %Figures(y, 'OriginalSignal');
+        %FFTPlot (y,fs, 'fftOrig');
 
 % Downsample signal to 2kHz
 
@@ -53,8 +53,8 @@ function [features_] = GenerateFeatures(file)
     w2 = Filter(w, newfs);
  
     %Plot and save figures
-        Figures(w2, 'DenoisedSignal');
-        FFTPlot (w2,newfs, 'fftDenoised');
+        %Figures(w2, 'DenoisedSignal');
+        %FFTPlot (w2,newfs, 'fftDenoised');
  
  
  % Determine Shannon Energy to get envelope
@@ -85,8 +85,8 @@ function [features_] = GenerateFeatures(file)
     
     %Plot and save figures
         
-        signals = [w2,s,newPeaks];
-        Figures(signals,'PeakIdentification')
+        %signals = [w2,s,newPeaks];
+        %Figures(signals,'PeakIdentification')
 
 
 % Optimize peaks detection
