@@ -241,6 +241,15 @@ class Ui_MainWindow(object):
                 self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised3.png"
                 self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification3.png"
         
+        
+        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_murmur/Btraining_murmur/164_1307106095995_B.wav":
+                
+                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal4.png"
+                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig4.png"
+                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal4.png"
+                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised4.png"
+                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification4.png"
+        
         else:
                 self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png"
                 self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png"
