@@ -1,9 +1,9 @@
 #ignore matlab backup files
 *.m~
-#ignore pictures
-*.png
 #ignore eps files
 *.eps
+#Ignore GUI signals
+Code/Figures
 #ignore gui
 *.ui
 # Ignore CSV files
