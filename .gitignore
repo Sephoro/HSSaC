@@ -6,3 +6,9 @@
 *.eps
 #ignore gui
 *.ui
+# Ignore CSV files
+*.csv
+# Ignore pickled models
+*.pkl
+# Ignore python cache files
+*.pyc
