@@ -61,7 +61,11 @@ to 50-200 words, which should concisely summarise the paper.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \section{INTRODUCTION}
-As it stands, one of the most important, cost-effective and wide 
+As it stands, one of the most important, cost-effective and widely used techniques for one to get screened for cardiovascular diseases (CVDs) is through cardiac auscultation by a clinical physician \cite{28_gavrovska2017identification, 32_montinari2019first}. For rural populations, screening for CVDs hardly occurs due to lack of clinical physicians and health care avoidance \cite{33,34}. World Health Organisation (WHO) reports CVDs as the leading cause of deaths globally, with an estimated 31\% of the deaths in 2016 caused by CVDs \cite{WHO}. Methods to detect early signs of CVDs could prove to be very helpful in lowering the mortality rate due to CVDs, especially in disadvantaged communities \cite{34}.
+
+This paper presents a project, that aims create an application using machine learning techniques. The application will enable first level screening of CVDs for personal use by individuals on their smartphones and will aid clinical physicians with cardiac auscultation. To train the machine learning (ML) models, heartbeat sounds, in a form of a Phonocardiogram (PCG) signal, from two sources are used. The sources are a smartphone and a digital stethoscope. Prior training, the PCG signals are segmented and used to generate features to feed the ML models. A total of 24 features, including non-time-domain features, are extracted. The ML models (ANN, SVM \& XGB) trained on these features are then compared in their ability to diagnose CVDs.
+
+\section{BACKGROUND}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
