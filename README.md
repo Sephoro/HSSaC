@@ -16,3 +16,8 @@ Heartbeat Sound Segmentation and Classification
      > For home use by individuals using a smartphone.\
      > For hospital use by medical professionals.
        
+
+### Project Methodology
+The below diagram presents the project methodology.
+
+![alt text](https://github.com/Sephoro/HSA/blob/master/Project_Poster/finalflowC1.png)
