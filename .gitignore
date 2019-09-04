@@ -12,3 +12,6 @@
 *.pkl
 # Ignore python cache files
 *.pyc
+# Ignore latex build files
+*.aux
+*.log
