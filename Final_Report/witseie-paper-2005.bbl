@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{{\tt #1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{muller:2003:dbr}
+G.~H. Muller and C.~Landy.
+\newblock \enquote{Detection of broken rotor bars, {P}art 1 - new theory.}
+\newblock {\em SAIEE Transactions\/}, vol.~95, no.~1, pp. 7--18, Mar. 2003.
+
+\bibitem{finn:2003:dip}
+L.~Finn, R.~Mulholland, and G.~Gibbon.
+\newblock \enquote{Design and implemention of a prototype computer based
+  rehabilitation device for the lower extremities.}
+\newblock {\em SAIEE Transactions\/}, vol.~95, no.~1, pp. 29--32, Mar. 2003.
+
+\bibitem{vas:1992:smi}
+P.~Vas.
+\newblock \enquote{Simulation and monitoring of induction motors with motor
+  asymmetry.}
+\newblock In {\em Proceedings of the 6th International Conference on Electrical
+  Machines\/}, pp. 435--439. Manchester, May 1992.
+
+\bibitem{abdel-salam:1990:elf}
+A.~Oppenheim and R.~Shafer.
+\newblock {\em Discrete-time signal processing\/}, chap.~3, pp. 82--112.
+\newblock USA: Prentice-Hall Inc., first ed., Aug. 1989.
+
+\end{thebibliography}
