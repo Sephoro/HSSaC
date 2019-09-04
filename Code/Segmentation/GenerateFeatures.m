@@ -4,14 +4,14 @@ function [features_] = GenerateFeatures(file)
 % Generate features for a given file, returns a 1x26 vector of features
 
 
-   % file = '../../../../Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav';
+    %file = '../../../../Dataset/setB/Btraining_murmur/Btraining_murmur/164_1307106095995_B.wav';
 % load file audio file
 
     [y,fs] = audioread(file);
 
     %Plot and save figures
-        %Figures(y, 'OriginalSignal');
-        %FFTPlot (y,fs, 'fftOrig');
+        %Figures(y, 'OriginalSignal4');
+        %FFTPlot (y,fs, 'fftOrig4');
 
 % Downsample signal to 2kHz
 
@@ -53,8 +53,8 @@ function [features_] = GenerateFeatures(file)
     w2 = Filter(w, newfs);
  
     %Plot and save figures
-        %Figures(w2, 'DenoisedSignal');
-        %FFTPlot (w2,newfs, 'fftDenoised');
+        %Figures(w2, 'DenoisedSignal4');
+        %FFTPlot (w2,newfs, 'fftDenoised4');
  
  
  % Determine Shannon Energy to get envelope
@@ -86,7 +86,7 @@ function [features_] = GenerateFeatures(file)
     %Plot and save figures
         
         %signals = [w2,s,newPeaks];
-        %Figures(signals,'PeakIdentification')
+        %Figures(signals,'PeakIdentification4')
 
 
 % Optimize peaks detection

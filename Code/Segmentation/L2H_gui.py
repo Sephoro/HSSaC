@@ -8,10 +8,14 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
+import sys
+sys.path.append('../Segmentation')
+from classifier import Classifier as clf
 
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+    def setupUi(self, MainWindow, clf_):
+        self.clf_ = clf_
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1259, 1016)
         MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
@@ -186,7 +190,7 @@ class Ui_MainWindow(object):
         self.accuracy.setPlaceholderText(_translate("MainWindow", "%"))
         self.comboBox.setItemText(0, _translate("MainWindow", "ANN"))
         self.comboBox.setItemText(1, _translate("MainWindow", "SVM"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "XGBoost"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "XGB"))
         self.evaluateBtn.setText(_translate("MainWindow", "Evaluate Model"))
         self.sig2H_2.setText(_translate("MainWindow", "Detected Peaks"))
         
@@ -196,51 +200,111 @@ class Ui_MainWindow(object):
         self.loadBtn.clicked.connect(self.originalsignal)
         self.denoiseBtn.clicked.connect(self.Denoisedsignal)
         self.peaksBtn.clicked.connect(self.detectedPeaks)
+        self.evaluateBtn.clicked.connect(self.evaluateModel)
+    
+    #load directory of file
+    def loadDirectory(self):
+        filedir = self.directory.text()
+        print(filedir)
         
+        return filedir    
     
     #Play the original signal    
     def playOriginalsignal(self):
                 
-        sound = '/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav'
+        sound = self.directory.text()
         os.system("aplay " + sound +"&")
         
-    #upload original signal and its fft when load button is pressed    
+    #upload original signal and its fft when load button is pressed  & send dir to features generator  
     def originalsignal(self):
-           
-        pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png")
+        
+        if self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_murmur/Btraining_murmur/185_1308073325396_C.wav":
+                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal2.png"
+                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig2.png"
+                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal2.png"
+                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised2.png"
+                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification2.png"
+        
+        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav":
+                
+                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal1.png"
+                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig1.png"
+                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal1.png"
+                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised1.png"
+                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification1.png"
+                
+        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_extrasystole/Btraining_extrastole/153_1306848820671_C.wav":
+                
+                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal3.png"
+                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig3.png"
+                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal3.png"
+                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised3.png"
+                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification3.png"
+        
+        
+        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_murmur/Btraining_murmur/164_1307106095995_B.wav":
+                
+                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal4.png"
+                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig4.png"
+                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal4.png"
+                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised4.png"
+                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification4.png"
+        
+        else:
+                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png"
+                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png"
+                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png"
+                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png"
+                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png"
+        
+        
+        pixmap = QtGui.QPixmap(self.orig)
         pixmap = pixmap.scaled(pixmap.width(), self.sig1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.sig1.setPixmap(pixmap)
         
-        pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png")
+        pixmap1 = QtGui.QPixmap(self.origFFT)
         pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.fft1.setPixmap(pixmap1)
+                      
     
     #upload denoised signal  and its fft when denoised button is pressed       
     def Denoisedsignal(self):
-           
-        pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png")
+        
+        #generate features
+        self.clf_.generateFeatures(self.directory.text()) 
+          
+        pixmap = QtGui.QPixmap(self.den)
         pixmap = pixmap.scaled(pixmap.width(), self.sig2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.sig2.setPixmap(pixmap)
         
-        pixmap1 = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png")
+        pixmap1 = QtGui.QPixmap(self.denFFT)
         pixmap1 = pixmap1.scaled(pixmap1.width(), self.fft2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.fft2.setPixmap(pixmap1)
+
         
     #upload the peaks detected signal      
     def detectedPeaks(self):
            
-        pixmap = QtGui.QPixmap("/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png")
+        pixmap = QtGui.QPixmap(self.peakI)
         pixmap = pixmap.scaled(pixmap.width(), self.peaksgraph.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
         self.peaksgraph.setPixmap(pixmap)
+        
+    def evaluateModel(self):
+            
+        model = (str(self.comboBox.currentText()))
+        class_, confidence = self.clf_.classify(model)
+        self.class_2.setText(class_)
+        self.accuracy.setText(str(float("{0:.2f}".format(confidence))))
 
 
 
 
 if __name__ == "__main__":
     import sys
+    clf_ = clf()
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
+    ui.setupUi(MainWindow,clf_)
     MainWindow.show()
     sys.exit(app.exec_())
