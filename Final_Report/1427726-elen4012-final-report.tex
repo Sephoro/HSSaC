@@ -114,13 +114,20 @@ The following are the constraints imposed on the project:
 \textcolor{white}{O re swarele...}\\
 The project is deemed successful if all requirements in section \ref{sec:req} have been met, whilst adhering to the set constraints in section \ref{sec:constraints}. Existing solutions
 have an accuracy of up to 77\% for classifying Normals of Dataset B and an accuracy of up to 46\%
-for Dataset A. With that said an accuracy of 77\% or higher in classifying Normals of Dataset B and
+for Normals of Dataset A. With that said an accuracy of 77\% or higher in classifying Normals of Dataset B and
 an accuracy of 46\% or higher in classifying Normals of Dataset A would be highly desirable.
 
 \subsection{RELATED WORK}
-Despite the medical significance of using ML techniques to detect for heart sounds anomalies, this application of ML is relatively unexplored \cite{bentley}. There also exist a few studies that have done work in classifying various heartbeat sounds using these techniques \cite{26}. Of a few that exist majority if them use PCG signals \cite{17,22,36,37} whilst others use Electrocardiograms (ECG) signals \cite{4,5}. 
+Despite the medical significance of using ML techniques to detect for heart sounds (HSs) anomalies, this application of ML is relatively unexplored \cite{bentley}. There also exist a few studies that have done work in classifying various heartbeat sounds using these techniques \cite{26}. Of a few that exist majority of them use PCG signals \cite{53,51,36,37} whilst others use Electrocardiograms (ECG) signals \cite{4,5}. 
 
-Before classification can occur, the HSs have to first be preprocessed and segmented. Liang \textit{et al} \cite{6} dominate in a lot of work \cite{11,19,15,50} with their method of preproccesing and segmenting. Some of their method are adopted from Groch \textit{et al} \cite{2}.
+Before classification can occur, the HSs have to first be preprocessed and segmented. Liang \textit{et al} \cite{6} dominate in a lot of work \cite{11,19,15,50} with their method of preprocessing and segmenting HSs. Some of their method are adopted from Groch \textit{et al} \cite{2}. 
+
+The features extracted from segmentation of HSs are usually time-domain based. Strunic \textit{et al} \cite{3} detects and classifies simulated murmurs \& normal HSs using similar preprocessing and segmentation techniques to \cite{6}. He trains a 3 hidden layer, 25 input and 1 output Artificial Neural Network (ANN) with simulated HSs. The ANN classifier achieves an accuracy of $85\pm7.4\%$ when tested with simulated HSs, however when tested with real-life HSs the accuracy drops to $48.7\pm12.7\%$. Unlike Strunic, Gomes \textit{et al} \cite{gomes2012classifying} train their ML models with real-life HSs having background noise. They extract time-domain features as well, using the standard deviation and mean of the systolic and diastolic periods intervals of the HSs. They achieve the highest accuracy of 72\% \& 70\% in classifying Normal HSs using the J48 Decision Tree and Multilayer Perceptron (MLP) respectively.
+
+Instead of using time-domain features, Teo \textit{et al} \cite{17} segment HSs on the basis of S1, S2, systolic and diastolic periods. They take the Fast Fourier Transform (FFT) and Power Spectrum of each of the four segments and use them to train their Neural Network (NN).The NN achieves a total diagnosing accuracy of  77\%. 
+
+Zhang \textit{et al} \cite{16} notice that using time or frequency domain features independently causes a loss in important pathological information. This leads to Tang \textit{et al} \cite{22} taking it one step further by combining a set of features from the time-domain, frequency-domain, cepstrum \& energy amongst others. With the same dataset as \cite{17}, they achieve an overall accuracy of 88\% using a Support Vector Machine (SVM) classifier.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION}
 
