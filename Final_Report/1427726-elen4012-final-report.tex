@@ -82,6 +82,7 @@ Murmurs are produced when there is a turbulent blood flow between either systoli
 
 \subsection{PROJECT FRAMEWORK}
 \subsubsection{Project Specifications and Requirements}
+\label{sec:req}
 \textcolor{white}{Ke a leboga Ntate}\\
 The ultimate aim of the project is create an application using ML techniques that will aid patients and clinical physicians in early detection of CVDs. The application is to accept raw audio data as input and return diagnosis results as an output.
 
@@ -99,6 +100,7 @@ The project is to be conducted under the following assumptions:
 \end{itemize}
 
 \subsubsection{Constraints}
+\label{sec:constraints}
 \textcolor{white}{O re swarele...}\\
 The following are the constraints imposed on the project:
 \begin{itemize}
@@ -111,7 +113,7 @@ The following are the constraints imposed on the project:
 \subsubsection{Success Criteria}
 \textcolor{white}{O re swarele...}\\
 The project is deemed successful if all requirements in section \ref{sec:req} have been met,
-whilst adhering to the set constraints in section \ref{sec:constrains}. Existing solutions
+whilst adhering to the set constraints in section \ref{sec:constraints}. Existing solutions
 have an accuracy of upto 77\% for classifying Normals of Dataset B and an accuracy of up to 46\%
 for Dataset A. With that said an accuracy of 77\% or higher in classifying Normals of Dataset B and
 an accuracy of 46\% or higher in classifying Normals of Dataset A would be highly desirable.
@@ -149,7 +151,7 @@ The Normal class consists of normal, healthy and regular HS. A Normal HS has a c
 Figure \ref{fig:normal} illustrates a typical PCG of a Normal HS.
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.45]{Final_Report/normal.png}
+    \includegraphics[scale = 0.45]{./normal.png}
     \caption{PCG of a Normal HS}
     \label{fig:normal}
 \end{figure}{}
@@ -166,7 +168,7 @@ The Murmur class consists of pathological HS. Murmurs are produced when there is
 Figure \ref{fig:murmur} illustrates a typical PCG of a Murmur HS.
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.45]{Final_Report/murmur.png}
+    \includegraphics[scale = 0.45]{./murmur.png}
     \caption{PCG of a Murmur HS}
     \label{fig:murmur}
 \end{figure}{}
@@ -187,7 +189,7 @@ The illustration above shows the \textit{"lub, dub"} of a Extra HS over time \ci
 Figure \ref{fig:extra} illustrates a typical PCG of an Extra HS.
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.45]{Final_Report/extra.png}
+    \includegraphics[scale = 0.45]{./extra.png}
     \caption{PCG of an Extra HS}
     \label{fig:extra}
 \end{figure}{}
@@ -206,7 +208,7 @@ The Extrasystole class, similar to the \hyperref[sec:extra]{Extra HS} class, doe
 Figure \ref{fig:extrasys} illustrates a typical PCG of an Extrasystole HS.
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.45]{Final_Report/extrasys.png}
+    \includegraphics[scale = 0.45]{./extrasys.png}
     \caption{PCG of an Extrasystole HS}
     \label{fig:extrasys}
 \end{figure}{}
@@ -220,7 +222,7 @@ The Artifact class does not consist of any HS. These are recordings of random so
 Figure \ref{fig:arti} illustrates a typical of an Artifact.
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.45]{Final_Report/arti.png}
+    \includegraphics[scale = 0.45]{./arti.png}
     \caption{Artifact Class signal}
     \label{fig:arti}
 \end{figure}{}

@@ -15,3 +15,7 @@ Code/Figures
 # Ignore latex build files
 *.aux
 *.log
+*.out
+# Ignore latex .bib build files
+*.bbl
+*.blg
