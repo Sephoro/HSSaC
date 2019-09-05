@@ -72,7 +72,7 @@ This paper presents a project, that aims create an application using machine lea
 
 \section{BACKGROUND}
 \label{back}
-Through cardiac auscultation clinical physicians are able to tell whether an individual has CVDs or not. They use the heart's lub (S1) and dub (S2) sounds to help them identify irregularities in ones heartbeat sounds. S1 and S2 are known as the fundamental heart  sounds (FHs) \cite{54}. The intervals between S1-S2 and S2-S1 are known as the systolic and diastolic periods respectively. For a relaxed heartbeat the diastolic period is larger than the systolic period \cite{orient2010sapira}. In a normal heartbeat sound, S1 is followed by S2 in a continuous cycle.
+Through cardiac auscultation clinical physicians are able to tell whether an individual has CVDs or not. They use the heart's lub (S1) and dub (S2) sounds to help them identify irregularities in ones heartbeat sounds. S1 and S2 are known as the fundamental heart sounds (FHSs) \cite{54}. The intervals between S1-S2 and S2-S1 are known as the systolic and diastolic periods respectively. For a relaxed heartbeat the diastolic period is larger than the systolic period \cite{orient2010sapira}. In a normal heartbeat sound, S1 is followed by S2 in a continuous cycle.
 
 Abnormalities occur when there are irregularities in the cycle of S1 and S2, these irregularities are what makes CVDs. 
 
@@ -88,7 +88,7 @@ The ultimate aim of the project is create an application using ML techniques tha
 
 This will be carried out using data from Dataset A and Dataset B. Dataset A is recorded by the general public using the iStethoscope Pro app on an iPhone, whilst Dataset B is recorded in a more professional manner by clinical physicians using a digital stethoscope. They both differ by two categories as mentioned in the opening paragraphs of section \ref{back} and both have excessive background noise as they are recorded in real-life settings. 
 
-Due to the excessive background noise, it is required that processing techniques capable of denoising the audio data be implemented before segmentation can occur. Following denoising, a method to locate S1 and S2 HS as well as a method to segment the Normal PCGs from both datasets is required. After successful segmentation, it is required that features be generated from the results of segmenting the PCG signals. Lastly, it is required that ML models be built and trained using the generated features. 
+Due to the excessive background noise, it is required that processing techniques capable of denoising the audio data be implemented before segmentation can occur. Following denoising, a method to locate S1 and S2 HSs as well as a method to segment the Normal PCGs from both datasets is required. After successful segmentation, it is required that features be generated from the results of segmenting the PCG signals. Lastly, it is required that ML models be built and trained using the generated features. 
 
 \subsubsection{Assumptions}
 \textcolor{white}{Ke a leboga Jeso}\\
@@ -112,11 +112,15 @@ The following are the constraints imposed on the project:
 
 \subsubsection{Success Criteria}
 \textcolor{white}{O re swarele...}\\
-The project is deemed successful if all requirements in section \ref{sec:req} have been met,
-whilst adhering to the set constraints in section \ref{sec:constraints}. Existing solutions
-have an accuracy of upto 77\% for classifying Normals of Dataset B and an accuracy of up to 46\%
+The project is deemed successful if all requirements in section \ref{sec:req} have been met, whilst adhering to the set constraints in section \ref{sec:constraints}. Existing solutions
+have an accuracy of up to 77\% for classifying Normals of Dataset B and an accuracy of up to 46\%
 for Dataset A. With that said an accuracy of 77\% or higher in classifying Normals of Dataset B and
 an accuracy of 46\% or higher in classifying Normals of Dataset A would be highly desirable.
+
+\subsection{RELATED WORK}
+Despite the medical significance of using ML techniques to detect for heart sounds anomalies, this application of ML is relatively unexplored \cite{bentley}. There also exist a few studies that have done work in classifying various heartbeat sounds using these techniques \cite{26}. Of a few that exist majority if them use PCG signals \cite{17,22,36,37} whilst others use Electrocardiograms (ECG) signals \cite{4,5}. 
+
+Before classification can occur, the HSs have to first be preprocessed and segmented. Liang \textit{et al} \cite{6} dominate in a lot of work \cite{11,19,15,50} with their method of preproccesing and segmenting. Some of their method are adopted from Groch \textit{et al} \cite{2}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION}
 
@@ -157,7 +161,7 @@ Figure \ref{fig:normal} illustrates a typical PCG of a Normal HS.
 \end{figure}{}
 
 \subsection*{The Murmur Class}
-The Murmur class consists of pathological HS. Murmurs are produced when there is a turbulent blood flow between either systolic or diastolic periods \cite{35}. The turbulence often cause a "whooshing" sound in between S1 and S2 or in between S2 and S1. The illustration above shows the \textit{"lub, dub"} of a Murmur HS over time \cite{bentley}.
+The Murmur class consists of pathological HSs. Murmurs are produced when there is a turbulent blood flow between either systolic or diastolic periods \cite{35}. The turbulence often cause a "whooshing" sound in between S1 and S2 or in between S2 and S1. The illustration above shows the \textit{"lub, dub"} of a Murmur HS over time \cite{bentley}.
 
 \hspace{1cm}{\texttt{lub..***..dub......lub..***..dub.....}}
 
@@ -177,7 +181,7 @@ From figure \ref{fig:murmur} it can clearly be seen that there are are extra dis
 
 \subsection*{The Extra HS Class}
 \label{sec:extra}
-The Extra HS class does not necessarily consists of pathological HS, however sometimes it could be a sign of a disease. Extra HS are produced when there is either an extra S2 or S1 after either S2 or S1 has occurred. This repeats regularly throughout the entire heart cycle in this manner S1-S2-S2-S1 or S1-S1-S2-S1-S1.
+The Extra HS class does not necessarily consists of pathological HSs, however sometimes it could be a sign of a disease. Extra HS are produced when there is either an extra S2 or S1 after either S2 or S1 has occurred. This repeats regularly throughout the entire heart cycle in this manner S1-S2-S2-S1 or S1-S1-S2-S1-S1.
 The illustration above shows the \textit{"lub, dub"} of a Extra HS over time \cite{bentley}.
 
 \hspace{1cm}{\texttt{lub.lub...dub......lub.lub...dub.....}}
@@ -197,7 +201,7 @@ Figure \ref{fig:extra} illustrates a typical PCG of an Extra HS.
 From figure \ref{fig:extra} it can clearly be seen that there are extra peak in between S1 and S2 as compared to figure \ref{fig:normal}.
 
 \subsection*{The Extrasystole HS Class}
-The Extrasystole class, similar to the \hyperref[sec:extra]{Extra HS} class, does not necessarily consists of pathological HS, however sometimes it could be a sign of a disease. Extrasystole HS occur in a similar manner as Extra HS, but they do not occur regularly. They are commonly identified by HS that are out of place, with a HS either repeated or skipped. The illustration above shows the \textit{"lub, dub"} of a Extrasystole HS over time \cite{bentley}.
+The Extrasystole class, similar to the \hyperref[sec:extra]{Extra HS} class, does not necessarily consists of pathological HSs, however sometimes it could be a sign of a disease. Extrasystole HSs occur in a similar manner as Extra HS, but they do not occur regularly. They are commonly identified by HSs that are out of place, with a HS either repeated or skipped. The illustration above shows the \textit{"lub, dub"} of a Extrasystole HS over time \cite{bentley}.
 
 \hspace{0.5cm}{\texttt{lub....dub......lub.lub...dub.....lub....}}
 
@@ -217,7 +221,7 @@ From figure \ref{fig:extrasys} it can clearly be seen that there is a single ext
 
 \subsection*{The Artifact Class}
 \label{sec:arti}
-The Artifact class does not consist of any HS. These are recordings of random sounds. The class is to help the developed models to differentiate between a HS and just pure noise \cite{bentley}.
+The Artifact class does not consist of any HSs. These are recordings of random sounds. The class is to help the developed models to differentiate between a HS and just pure noise \cite{bentley}.
 
 Figure \ref{fig:arti} illustrates a typical of an Artifact.
 \begin{figure}[h!]
