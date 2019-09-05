@@ -89,6 +89,14 @@ This will be carried out using data from Dataset A and Dataset B. Dataset A is r
 
 Due to the excessive background noise, it is required that processing techniques capable of denoising the audio data be implemented before segmentation can occur. Following denoising, a method to locate S1 and S2 HS as well as a method to segment the Normal PCGs from both datasets is required. After successful segmentation, it is required that features be generated from the results of segmenting the PCG signals. Lastly, it is required that ML models be built and trained using the generated features. 
 
+\subsubsection{Assumptions}
+\textcolor{white}{Ke a leboga Jeso}\\
+The project is to be conducted under the following assumptions:
+\begin{itemize}
+    \item The audio data range will be 30 seconds or less.
+    \item Dataset A has only four classes ( Normal, Murmur, Extra HS and Artifact). Dataset B has only three classes ( Normal, Murmur \& Extrasystole)
+    \item Both datasets have integrity and are correctly labelled.
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
