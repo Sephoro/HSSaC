@@ -129,6 +129,18 @@ Instead of using time-domain features, Teo \textit{et al} \cite{17} segment HSs 
 Zhang \textit{et al} \cite{16} notice that using time or frequency domain features independently causes a loss in important pathological information. This leads to Tang \textit{et al} \cite{22} taking it one step further by combining a set of features from the time-domain, frequency-domain, cepstrum \& energy amongst others. With the same dataset as \cite{17}, they achieve an overall accuracy of 88\% using a Support Vector Machine (SVM) classifier.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{SYSTEM OVERVIEW}
+The main framework of this project is illustrated in figure \ref{fig:frame}. The framework presents the ML models development of the project. On signal processing, this paper mainly focuses on the FFT, MFCC \& Wavelet. Preprocessing and Segmentation are covered in more detail in \cite{love}. Feature Generation, ML model training and ML model testing are also covered in detail in this paper.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{./framework2.png}
+    \caption{Project framework}
+    \label{fig:frame}
+\end{figure}
+
+From figure \ref{fig:frame}, the raw audio data is read from the two datasets in either formats mentioned earlier. As the audio data contains extensive background noise, they first pass through preprocessing, where they are denoised. After denoising, the PCG signals goes through four parallel stages for further signal processing. The four parallel stages condition the PCG signals for feature extraction in their respective domains. Once features from all four domains are generated, the development of ML models begin. The models are trained of the features. After training the models, testing begins.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION}
 
 A conclusion may review the main points of the paper, but do not replicate the
