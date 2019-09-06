@@ -144,7 +144,7 @@ From figure \ref{fig:frame}, the raw audio data is read from the two datasets in
 
 \section{IMPLEMENTATION}
 \subsection{Dataset}
-As mentioned in section \ref{back}, there are two datasets that are used to train \& test the ML models. Dataset A is collected from the general public and is recorded using an iPhone application, iStethoscope pro. The dataset has four classes and a total of 124 samples of a sample rate 44100 Hz. Dataset B on the other hand, is recorded using a digital stethoscope, DigiScope. The dataset is collected by clinical physicians in hospitals at a sample rate of 2000 Hz. The total count of the samples in the dataset amounts to 312 with three classes \cite{bentley} \citeauthor{love}. Figure \ref{fig:dist} illustrates the distribution of both the datasets on the same axis.
+As mentioned in section \ref{back}, there are two datasets that are used to train \& test the ML models. Dataset A is collected from the general public and is recorded using an iPhone application, iStethoscope pro. The dataset has four classes and a total of 124 samples of a sample rate 44100 Hz. Dataset B on the other hand, is recorded using a digital stethoscope, DigiScope. The dataset is collected by clinical physicians in hospitals at a sample rate of 4000 Hz. The total count of the samples in the dataset amounts to 312 with three classes \cite{bentley}. Figure \ref{fig:dist} illustrates the distribution of both the datasets on the same axis.
 
 \begin{figure}
     \centering
@@ -154,6 +154,13 @@ As mentioned in section \ref{back}, there are two datasets that are used to trai
 \end{figure}{}
 
 From figure \ref{fig:dist}, it can be seen that Dataset A's data is somewhat evenly distributed whilst Dataset B's data is not.
+
+\subsection{Preprocessing \& Segmentation}
+The preprocessing phase is where the HSs are denoised as seen in figure \ref{fig:frame}. In this phase the PCG signals from both datasets are downsampled to a common sampling frequency of 2000 Hz. The signals are then normalised. After normalisation the signals go through a range of denoising techniques, including bandpass filtering and wavelet denoising. 
+
+After preprocessing, the segmentation phase begins. In this phase, S1 and S2 are located on the preprocessed HSs. The HSs are then segmented on the basis of the located FHSs. Figure \ref{fig:preseg} in Appendix \ref{app:preseg} summarises the Preprocessing and Segmentation phase, for a clearer and concise explanation of this phase see \cite{love}.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CONCLUSION}
 
@@ -266,7 +273,16 @@ Figure \ref{fig:arti} illustrates a typical of an Artifact.
 
 From figure \ref{fig:arti}, it can be seen that there is no sense of normal periodicity within the signal.
 
+\section{Preprocessing \& Segmentation Phase}
+\label{app:preseg}
+Figure \ref{fig:preseg} presents the steps and processes taken in the preprocessing and segmentation phase. For a more clearer and concise explanation of the figure refer to \cite{love}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{./PreSeg.png}
+    \caption{Preprocessing and Segmentation flow diagram}
+    \label{fig:preseg}
+\end{figure}{}
 
 
 
