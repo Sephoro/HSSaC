@@ -171,8 +171,29 @@ Time domain features are features extracted from the results of \hyperref[sec:pr
 
 The motivation for computing the standard deviation and mean of the HSs' systolic \& diastolic intervals is both from literature \cite{gomes2012classifying,bentley} and observation. It was observed that in most cases Normal HSs have a \hyperref[t:s1]{\texttt{stdS1}} \& \hyperref[t:s2]{\texttt{stdS2}} of less than or equal to a 100. From conducting the project it was also observed that Extra HS and Extrasystole HSs have more peaks per file length hence the motivation behind \hyperref[t:pr]{\texttt{prRatio}} \& \hyperref[t:pc]{\texttt{pcRatio}}.
 
+\subsubsection{Wavelet Features}
+\textcolor{white}{Ke tlabe ke hlokang...}\\
+In preprocessing, there is a part where the wavelet transform is used to denoise the PCG signals, see figure \ref{fig:preseg} in Appendix \ref{app:preseg} and \cite{love}. The denoising is carried out using a fifth level $7^{th}$ order Daubechies (db7) Discrete Wavelet Transform (DWT). 
 
+To denoise, the DWT decomposes and reconstructs the original signal using wavelet approximations, leaving out noisy components of the signal. The reconstruction often under-approximate murmurs \cite{10}. This leads to an important features in classifying the Murmur class. The feature, \texttt{rebuildError}, as the name suggests is constructed by taking the average of the difference between the original PCG signal just before wavelet denoising and the PCG signal after wavelet denoising. Figure \ref{fig:dbb} and figure \ref{fig:dba} illustrate the normalised \texttt{rebuildError} of PCG signals in Dataset A and Dataset B respectively.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{./rebuildError_B.png}
+    \caption{\texttt{rebuildError} amongst the different classes in Dataset B}
+    \label{fig:dbb}
+\end{figure}{}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{./rebuildError_A.png}
+    \caption{\texttt{rebuildError} amongst the different classes in Dataset A}
+    \label{fig:dba}
+\end{figure}{}
+
+From figure \ref{fig:dbb} it is clear that in Dataset B, the Murmur class has the largest \texttt{rebuildError} as compared to the other classes. Figure \ref{fig:dba} on the other hand shows the Artifact class in Dataset A having the highest \texttt{rebuildError}. The other wavelet features are computed by taking the mean and standard deviation of the approximation of a $6^{th}$ level db6 DWT of the preprocessed PCG signals. See table \ref{tab:wav} in Appendix \ref{app:features}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
 \section{CONCLUSION}
 
 A conclusion may review the main points of the paper, but do not replicate the
@@ -184,6 +205,7 @@ abstract as the conclusion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+
 %\nocite{*}
 \bibliographystyle{witseie}
 \bibliography{sample}
@@ -290,7 +312,7 @@ Figure \ref{fig:preseg} presents the steps and processes taken in the preprocess
 %\vspace{-2cm}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{./PreSeg.png}
+    \includegraphics[scale=0.5]{./reportFDfinal.png}
     \caption{Preprocessing and Segmentation flow diagram}
     \label{fig:preseg}
 \end{figure}{}
@@ -300,7 +322,7 @@ Figure \ref{fig:preseg} presents the steps and processes taken in the preprocess
 \subsection{Time Domain Features}
 Table \ref{tab:tfeat} presents an elaboration of the different features extracted from the results of segmentation. Time-domain features make up the majority of the features with 10 out of 24 features coming from the this domain.
 
-\begin{table}[]
+\begin{table}[h!]
 \caption{Features from the time-domain}
 \label{tab:tfeat}
 \begin{tabular}{|l|l|}
@@ -319,7 +341,20 @@ pcRatio & \begin{tabular}[c]{@{}l@{}}\label{t:pc}Ratio of the total number of pe
 \end{tabular}
 \end{table}
 
+\subsection{Wavelet Features}
+Table \ref{tab:wav} presents an elaboration of the different features extracted from DWT and wavelet denoising. Wavelet features make up the minority of the features with 3 out of 24 features coming from the this domain.
 
+\begin{table}[h!]
+\caption{Features extracted from DWT}
+\label{tab:wav}
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Feature} & \multicolumn{1}{c|}{\textbf{Description}} \\ \hline
+rebuildError & \begin{tabular}[c]{@{}l@{}}Average difference between the PCG\\ signal before denoising and the PCG\\ signal after denoising.\end{tabular} \\ \hline
+stdWavelet & \begin{tabular}[c]{@{}l@{}}Standard deviation of the approximation \\ of a  $6^{th}$ level db6 DWT of the \\ preprocessed PCG signals.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{meanWavelet} & \begin{tabular}[c]{@{}l@{}}Mean of the approximation of a $6^{th}$\\ level db6 DWT of the preprocessed\\ PCG signals.\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
 
 
 \end{document}
