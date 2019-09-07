@@ -16,6 +16,9 @@
 \usepackage{KJN}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{subfig}
 
 %
 % PDF Info
@@ -135,7 +138,7 @@ The main framework of this project is illustrated in figure \ref{fig:frame}. The
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.6]{./framework2.png}
+    \includegraphics[scale=0.5]{./framework2.png}
     \caption{Project framework}
     \label{fig:frame}
 \end{figure}
@@ -149,7 +152,7 @@ As mentioned in section \ref{back}, there are two datasets that are used to trai
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{./distribution.png}
+    \includegraphics[scale=0.45]{./distribution.png}
     \caption{Distribution of the datasets}
     \label{fig:dist}
 \end{figure}{}
@@ -179,19 +182,44 @@ To denoise, the DWT decomposes and reconstructs the original signal using wavele
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.6]{./rebuildError_B.png}
+    \includegraphics[scale=0.45]{./rebuildError_B.png}
     \caption{\texttt{rebuildError} amongst the different classes in Dataset B}
     \label{fig:dbb}
 \end{figure}{}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.6]{./rebuildError_A.png}
+    \includegraphics[scale=0.45]{./rebuildError_A.png}
     \caption{\texttt{rebuildError} amongst the different classes in Dataset A}
     \label{fig:dba}
 \end{figure}{}
 
-From figure \ref{fig:dbb} it is clear that in Dataset B, the Murmur class has the largest \texttt{rebuildError} as compared to the other classes. Figure \ref{fig:dba} on the other hand shows the Artifact class in Dataset A having the highest \texttt{rebuildError}. The other wavelet features are computed by taking the mean and standard deviation of the approximation of a $6^{th}$ level db6 DWT of the preprocessed PCG signals. See table \ref{tab:wav} in Appendix \ref{app:features}. 
+From figure \ref{fig:dbb} it is clear that in Dataset B, the Murmur class has the largest \texttt{rebuildError} as compared to the other classes. Figure \ref{fig:dba} on the other hand shows the Artifact class in Dataset A having the highest \texttt{rebuildError}. The other wavelet features are computed by taking the mean and standard deviation of the approximation of a $6^{th}$ level db6 DWT of the preprocessed PCG signals. See table \ref{tab:wav} in Appendix \ref{app:features}. Features from the wavelets make up only 3 out of the 24 total features.
+
+
+\subsubsection{Frequency Domain Features}
+\textcolor{white}{Ke ea ipitsang Jehova...}\\
+Features in the frequency domain are computed by taking the FFT of the PCG signals. Through experimentation, it was discovered that murmurs tend to have distinct peaks between 180 Hz \& 190 Hz bands of their analytic envelope of their FFT. The analytic envelope computed using the FFT of a PCG signal will be termed FFTSHA for the rest of this paper. Steps followed on how the FFTSHA of a PCG signal is computed are explained concisely in Appendix \ref{app:features} section \ref{sec:fftsha}. 
+
+Figure \ref{fig:n180} and figure \ref{fig:m180} show the difference in the FFTSHA of PCG signals in the Normal class and Murmur class respectively.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.45]{./fftsha_n.png}
+    \caption{FFTSHA of a Normal PCG signal at [180 190] Hz band.}
+    \label{fig:n180}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.45]{./fftsha_m.png}
+    \caption{FFTSHA of a Murmur PCG signal at [180 190] Hz band.}
+    \label{fig:m180}
+\end{figure}
+
+Peaks are identified in a similar as \cite{love} from the [180 190] Hz as seen in figure \ref{fig:n180} \& figure \ref{fig:m180}. From the identified peaks features are generated. Table  \ref{tab:freq} in Appendix \ref{app:features} elaborates more on the features extracted. Features from the frequency-domain make up 5 out of the 24 total number of features.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{CONCLUSION}
@@ -312,7 +340,7 @@ Figure \ref{fig:preseg} presents the steps and processes taken in the preprocess
 %\vspace{-2cm}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{./reportFDfinal.png}
+    \includegraphics[scale=0.45]{./reportFDfinal.png}
     \caption{Preprocessing and Segmentation flow diagram}
     \label{fig:preseg}
 \end{figure}{}
@@ -351,8 +379,58 @@ Table \ref{tab:wav} presents an elaboration of the different features extracted 
 \hline
 \textbf{Feature} & \multicolumn{1}{c|}{\textbf{Description}} \\ \hline
 rebuildError & \begin{tabular}[c]{@{}l@{}}Average difference between the PCG\\ signal before denoising and the PCG\\ signal after denoising.\end{tabular} \\ \hline
-stdWavelet & \begin{tabular}[c]{@{}l@{}}Standard deviation of the approximation \\ of a  $6^{th}$ level db6 DWT of the \\ preprocessed PCG signals.\end{tabular} \\ \hline
+stdWavelet & \begin{tabular}[c]{@{}l@{}}Standard deviation of the approxim-\\ ation of a  $6^{th}$ level db6 DWT \\ \\ of the preprocessed PCG signals.\end{tabular} \\ \hline
 \multicolumn{1}{|l|}{meanWavelet} & \begin{tabular}[c]{@{}l@{}}Mean of the approximation of a $6^{th}$\\ level db6 DWT of the preprocessed\\ PCG signals.\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Frequency Domain Features}
+
+\subsubsection{Computation of the FFTSHA}
+\label{sec:fftsha}
+\textcolor{white}{Ke yaka degree ye!}\\
+The below steps explain in details on how the FFTSHA of a PCG signal is computed. Figure \ref{fig:fftsha} illustrates the flow diagram of the computation. All the computation are done in MATLAB.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{./fftsha.png}
+    \caption{Steps followed in computing FFTSHA}
+    \label{fig:fftsha}
+\end{figure}{}
+
+Figure \ref{fig:fftsha} steps are explained in detail below.
+\begin{enumerate}
+    \item Downsample the PCG signal \& then normalise.
+    \item Denoise the normalised and downsampled signal using $5^{th}$ level db7 DWT.
+    \item Take the FFT of the denoised PCG signal.
+    \item Compute the the Shannon Energy of the calculated FFT.
+    \item Calculate the the envelope of the computed Shannon Energy using the 'analytic' option in MATLAB to get the FFTSHA.
+\end{enumerate}{}
+
+Figure \ref{fig:fftvsha} illustrates the differences between FFT and FFTSHA of a PCG signal.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{./fftshavFFT.png}
+    \caption{FFT vs FFTSHA of a PCG signal}
+    \label{fig:fftvsha}
+\end{figure}{}
+
+From figure \ref{fig:fftvsha}  it can be seen that the FFTSHA appears to be a greatly attenuated version of the FFT. This characteristic is useful in the features extracted from the FFTSHA.
+
+\subsubsection{Extracted Features}
+\textcolor{white}{Ke yaka degree ye!}\\
+Table \ref{tab:freq} presents an elaboration of the different features extracted from the frequency-domain. There a 5 features out of 24 that are extracted from this domain.
+\begin{table}[h!]
+\caption{Features extracted from the frequency-domain.}
+\label{tab:freq}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Feature}} & \multicolumn{1}{c|}{\textbf{Description}} \\ \hline
+\multicolumn{1}{|c|}{stdFFTSHA} & \begin{tabular}[c]{@{}l@{}}Standard deviation of the identified in\\ the {[}180 190{]} Hz band.\end{tabular} \\ \hline
+\multicolumn{1}{|c|}{lenFFTSHA} & \begin{tabular}[c]{@{}l@{}}Count of qualifying peaks identified in\\ the {[}180 190{]} Hz band.\end{tabular} \\ \hline
+stdlenFFTSHA & Ratio of stdFFTSHA over lenFFTSHA \\ \hline
+lenstdFFTSHA & Ratio of lenFFTSHA over stdFFTSHA \\ \hline
+posFFT & \begin{tabular}[c]{@{}l@{}}Count of peaks from Shannon Energy\\ of FFT.\end{tabular} \\ \hline
 \end{tabular}
 \end{table}
 
