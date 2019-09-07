@@ -526,12 +526,12 @@ page \thepage \space undefined}}%
 %   \advance \rightskip by 15mm
 %   \advance \leftskip  by 15mm
    {\fontfamily{ptm}\fontseries{b}\fontsize{12pt}{\f@baselineskip}\selectfont \@title \par}
-   \vskip 12pt {\lineskip .5em
-   {\fontfamily{ptm}\fontseries{b}\fontsize{10pt}{\f@baselineskip}\selectfont \@author}\par}
+   \vskip 5pt {\lineskip .5em
+   {\fontfamily{ptm}\fontseries{b}\fontsize{10pt}{\f@baselineskip}\selectfont \centering{ \@author}\par}}
    \noindent{\itshape\small\vskip 12pt {\sl \@thanks}\par}
-   \noindent{\small\vskip 27pt {\fontfamily{ptm}\fontseries{b}\fontsize{9pt}{\f@baselineskip}\selectfont Abstract:} \@abstract\par}
-   \noindent{\small\vskip 9pt {\fontfamily{ptm}\fontseries{b}\fontsize{9pt}{\f@baselineskip}\selectfont Key words:} \@keywords\par}
-   \vskip 27pt}}
+   \noindent{\small\vskip 5pt {\fontfamily{ptm}\fontseries{b}\fontsize{9pt}{\f@baselineskip}\selectfont Abstract:} \@abstract\par}
+   \noindent{\small\vskip 2pt {\fontfamily{ptm}\fontseries{b}\fontsize{9pt}{\f@baselineskip}\selectfont Key words:} \@keywords\par}
+   \vskip 10pt}}
 
 \def\maketitle{\par
    \begingroup
@@ -595,7 +595,7 @@ page \thepage \space undefined}}%
    {section}%                         % name
    {1}%                               % level
    {\z@}%                             % indent
-   {0.5ex}%                  % beforeskip
+   {0.2ex}%                  % beforeskip
    {0.2ex}%                % afterskip
    {\centering\kenf}}% style
 
@@ -603,16 +603,19 @@ page \thepage \space undefined}}%
    {subsection}%                      % name
    {2}%                               % level
    {\z@}%                             % indent
-   {0.5ex}%                  % beforeskip
-   {0.2ex}%                % afterskip
+   {0.1ex}%                  % beforeskip
+   {0.1ex}%                % afterskip
    {\normalfont\normalsize\textsl}}% % style
 
 \def\subsubsection{\@startsection
    {subsubsection}%                   % name
    {3}%                               % level
    {\z@}%                             % indent
-   {0.75\baselineskip}%               % beforeskip
-   {-1em}%                            % afterskip
+  % {0.5ex}%                  % beforeskip
+  %{0.2ex}%                % afterskip
+  {0.1\baselineskip}%               % beforeskip
+  % {0.2ex}%                % afterskip
+   {-1em}                           % afterskip
    {\normalfont\normalsize\textsl}}% % style
 
 \def\refname{REFERENCES}

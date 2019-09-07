@@ -36,11 +36,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+% HEARTBEAT SOUND SEGMENTATION AND CLASSIFICATION USING MULTI-DOMAIN FEATURES}
 
+\title{\centering HEARTBEAT SOUND SEGMENTATION AND CLASSIFICATION USING MULTI-DOMAIN FEATURES}
 
-\title{INSTRUCTIONS AND STYLE GUIDELINES FOR THE PREPARATION OF FINAL YEAR LABORATORY PROJECT PAPERS : 2005 VERSION}
-
-\author{Elias Sepuru (1386807)
+\author{Elias Sepuru
 \thanks{School of Electrical \& Information Engineering, University of the
 Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa}
 }
@@ -155,7 +155,7 @@ As mentioned in section \ref{back}, there are two datasets that are used to trai
     \includegraphics[scale=0.45]{./distribution.png}
     \caption{Distribution of the datasets}
     \label{fig:dist}
-\end{figure}{}
+\end{figure}
 
 From figure \ref{fig:dist}, it can be seen that Dataset A's data is somewhat evenly distributed whilst Dataset B's data is not.
 
@@ -185,14 +185,14 @@ To denoise, the DWT decomposes and reconstructs the original signal using wavele
     \includegraphics[scale=0.45]{./rebuildError_B.png}
     \caption{\texttt{rebuildError} amongst the different classes in Dataset B}
     \label{fig:dbb}
-\end{figure}{}
+\end{figure}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.45]{./rebuildError_A.png}
     \caption{\texttt{rebuildError} amongst the different classes in Dataset A}
     \label{fig:dba}
-\end{figure}{}
+\end{figure}
 
 From figure \ref{fig:dbb} it is clear that in Dataset B, the Murmur class has the largest \texttt{rebuildError} as compared to the other classes. Figure \ref{fig:dba} on the other hand shows the Artifact class in Dataset A having the highest \texttt{rebuildError}. The other wavelet features are computed by taking the mean and standard deviation of the approximation of a $6^{th}$ level db6 DWT of the preprocessed PCG signals. See table \ref{tab:wav} in Appendix \ref{app:features}. Features from the wavelets make up only 3 out of the 24 total features.
 
@@ -218,6 +218,13 @@ Figure \ref{fig:n180} and figure \ref{fig:m180} show the difference in the FFTSH
 \end{figure}
 
 Peaks are identified in a similar as \cite{love} from the [180 190] Hz as seen in figure \ref{fig:n180} \& figure \ref{fig:m180}. From the identified peaks features are generated. Table  \ref{tab:freq} in Appendix \ref{app:features} elaborates more on the features extracted. Features from the frequency-domain make up 5 out of the 24 total number of features.
+
+\subsubsection{Cepstrum Features}
+\textcolor{white}{Modimo yo a phelang...}\\
+The cepstrum is defined as the inverse Fourier transform (IFT) of the log-magnitude of the Fourier Transform (FT). Mel-Frequency Cepstrum Coefficients (MFCC) are an advancement of the cepstrum. MFCC approximates the human ear perception of distance in frequency \cite{24}. MFCC are commonly used for voice recognition.
+
+To extract cepstrum features, 12 MFCC coefficients are extracted from each PCG signal. After extraction of the coefficient vectors, Principal Component Analysis (PCA)  is performed on the vectors. PCA pushes all the important features of the 12 coefficient vectors into the first couple of vectors. From applying PCA to the MFCC feature coefficients, features are extracted by computing the mean and standard deviation PCA vectors. Table \ref{tab:cep} in Appendix \ref{app:features} further elaborates on the features. A total of 6 out 24 features are extracted from the cepstrum domain.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -434,6 +441,25 @@ posFFT & \begin{tabular}[c]{@{}l@{}}Count of peaks from Shannon Energy\\ of FFT.
 \end{tabular}
 \end{table}
 
+\subsection{Cepstrum Features}
+Table \ref{tab:cep} presents an elaboration of the different features extracted from taking the PCA of MFCC coefficient vectors. Cepstrum features make up 6 out of the 24 features extracted.
+
+\begin{table}[h!]
+
+\caption{Features extracted from the cepstrum-domain.}
+\label{tab:cep}
+
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Feature} & \multicolumn{1}{c|}{\textbf{Description}} \\ \hline
+stdPCA1 & \begin{tabular}[c]{@{}l@{}}Standard deviation of the first \\ \\ PCA vector.\end{tabular} \\ \hline
+meanPCA1 & Mean of the first PCA vector. \\ \hline
+stdPCA2 & \begin{tabular}[c]{@{}l@{}}Standard deviation of the second\\ PCA vector.\end{tabular} \\ \hline
+meanPCA2 & Mean of the second PCA vector. \\ \hline
+\multicolumn{1}{|l|}{stdPCA3} & \begin{tabular}[c]{@{}l@{}}Standard deviation of the third\\ PCA vector.\end{tabular} \\ \hline
+\multicolumn{1}{|l|}{meanPCA3} & Mean of the third PCA vector. \\ \hline
+\end{tabular}
+\end{table}
 
 \end{document}
 
