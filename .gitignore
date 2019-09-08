@@ -19,3 +19,5 @@ Code/Figures
 # Ignore latex .bib build files
 *.bbl
 *.blg
+# Ignore vscode files
+.vscode
