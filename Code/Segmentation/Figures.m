@@ -1,8 +1,11 @@
 function [] = Figures(signal, name)
 
-pic = plot(signal);
+% To save plots for the GUI
+fig = figure('visible', 'off');
 
-[m , n]= size(signal);
+plot(signal);
+
+[~ , n]= size(signal);
 
 if n == 3
     hold on;
@@ -14,11 +17,23 @@ set(gcf,'Position',[100 100 571, 251]);
 
 set(gcf, 'Color', 'None');
 set(gca,'Color','None');
-set(gca,'xcolor','k') % Set the x axis color to white
-set(gca,'ycolor','k') % Set the y axis color to white
+set(gca,'xcolor','k') % Set the x axis color to black
+set(gca,'ycolor','k') % Set the y axis color to black
+set(gcf, 'InvertHardCopy', 'off'); % Apply gca changes to plot that is going to be saved
 
 addpath('./export_fig_folder/');
-save_path = strcat('../Figures/', name);
-%save transparent figure
-export_fig(save_path, '-png', '-eps', '-transparent');
+save_path = strcat('../Figures/', name, '.png');
+
+% Save transparent figure
+    
+    % export_fig(save_path, '-png', '-eps', '-transparent');
+
+
+% Save transparent figure using imwrite
+    
+    im_fig = getframe(fig);
+    im_fig = frame2im(im_fig);
+    imwrite(im_fig, save_path, 'png') %,'Transparency', [0 0 0])
+
+
 end
