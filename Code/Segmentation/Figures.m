@@ -17,8 +17,8 @@ set(gcf,'Position',[100 100 571, 251]);
 
 set(gcf, 'Color', 'None');
 set(gca,'Color','None');
-set(gca,'xcolor','k') % Set the x axis color to black
-set(gca,'ycolor','k') % Set the y axis color to black
+set(gca,'xcolor',[.1 .1 .1]) % 'k') % Set the x axis color to black
+set(gca,'ycolor',[.1 .1 .1]) % 'k') % Set the y axis color to black
 set(gcf, 'InvertHardCopy', 'off'); % Apply gca changes to plot that is going to be saved
 
 addpath('./export_fig_folder/');
