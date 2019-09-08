@@ -177,13 +177,13 @@ function [features_] = GenerateFeatures(file, generateFigures)
             
           % Save a plot of the denoised signal
           
-             Figures(w2, 'DenoisedSignal4');
-             FFTPlot (w2,newfs, 'fftDenoised4');
+            Figures(w2, 'DenoisedSignal4');
+            FFTPlot (w2,newfs, 'fftDenoised4');
              
           % Save a plot with the identified peaks
           
-              signals = [w2,s,newPeaks];
-              Figures(signals,'PeakIdentification4')
+            signals = [w2,s,newPeaks];
+            Figures(signals,'PeakIdentification4')
           
           
       end
