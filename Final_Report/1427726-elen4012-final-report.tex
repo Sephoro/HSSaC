@@ -19,7 +19,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 %\usepackage{subfig}
-
+\usepackage{pdfpages}
+\usepackage{amsmath}
 %
 % PDF Info
 %
@@ -48,15 +49,9 @@ Witwatersrand, Private Bag 3, 2050, Johannesburg, South Africa}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\abstract{The purpose of this document is to provide an easy-to-use
-template/style sheet to enable authors to prepare papers in the correct format
-and style for the final year laboratory project. This document may be
-downloaded from the School of Electrical and Information Engineering web site
-and can be used as a template. To ensure conformity of appearance it is
-essential that these instructions are followed. The abstract should be limited
-to 50-200 words, which should concisely summarise the paper.}
+\abstract{For the majority, the only way to check-up for heart anomalies is to go to a medical practitioner for a check up and for most people especially in rural communities this hardly happens. This paper presents a method to create machine learning models that will enable first level screening of heart disease in smartphone and at hospitals. Two datasets from a smartphone and a digital stethoscope are used, yielding 24 features from four different domains.  The features are used to train an ANN, SVM and XGB. The models yield overall accuracies of 80\%, 78\% \& 79\% respectively. }
 
-\keywords{Four to six key words in alphabetical order, separated by commas.}
+\keywords{MFCC, ANN, SVM, XGB, Wavelet}
 
 
 \maketitle
@@ -67,7 +62,7 @@ to 50-200 words, which should concisely summarise the paper.}
 %
 \section{INTRODUCTION}
 \label{intro}
-As it stands, one of the most important, cost-effective and widely used techniques for one to get screened for cardiovascular diseases (CVDs) is through cardiac auscultation by a clinical physician \cite{28_gavrovska2017identification, 32_montinari2019first}. For rural populations, screening for CVDs hardly occurs due to lack of clinical physicians and health care avoidance \cite{33,34}. World Health Organisation (WHO) reports CVDs as the leading cause of deaths globally, with an estimated 31\% of the deaths in 2016 caused by CVDs \cite{WHO}. Methods to detect early signs of CVDs could prove to be very helpful in lowering the mortality rate due to CVDs, especially in disadvantaged communities \cite{34}.
+As it stands, one of the most important, cost-effective and widely used techniques for one to get screened for cardiovascular diseases (CVDs) is through cardiac auscultation by a clinical physician \cite{32_montinari2019first}. For rural populations, screening for CVDs hardly occurs due to lack of clinical physicians and health care avoidance \cite{33,34}. World Health Organisation (WHO) reports CVDs as the leading cause of deaths globally, with an estimated 31\% of the deaths in 2016 caused by CVDs \cite{WHO}. Methods to detect early signs of CVDs could prove to be very helpful in lowering the mortality rate due to CVDs, especially in disadvantaged communities \cite{34}.
 
 This paper presents a project, that aims create an application using machine learning techniques. The application will enable first level screening of CVDs for personal use by individuals on their smartphones and will aid clinical physicians with cardiac auscultation. To train the machine learning (ML) models, heartbeat sounds, in a form of a Phonocardiogram (PCG) signal, from two sources are used. The sources are a smartphone and a digital stethoscope. Prior training, the PCG signals are segmented and used to generate features to feed the ML models. A total of 24 features, including non-time-domain features, are extracted. The ML models (ANN, SVM \& XGB) trained on these features are then compared in their ability to diagnose CVDs.
 
@@ -75,7 +70,7 @@ This paper presents a project, that aims create an application using machine lea
 
 \section{BACKGROUND}
 \label{back}
-Through cardiac auscultation clinical physicians are able to tell whether an individual has CVDs or not. They use the heart's lub (S1) and dub (S2) sounds to help them identify irregularities in ones heartbeat sounds. S1 and S2 are known as the fundamental heart sounds (FHSs) \cite{54}. The intervals between S1-S2 and S2-S1 are known as the systolic and diastolic periods respectively. For a relaxed heartbeat the diastolic period is larger than the systolic period \cite{orient2010sapira}. In a normal heartbeat sound, S1 is followed by S2 in a continuous cycle.
+Through cardiac auscultation clinical physicians are able to tell whether an individual has CVDs or not. They use the heart's lub (S1) and dub (S2) sounds to help them identify irregularities in ones heartbeat sounds. S1 and S2 are known as the fundamental heart sounds (FHSs). The intervals between S1-S2 and S2-S1 are known as the systolic and diastolic periods respectively. For a relaxed heartbeat the diastolic period is larger than the systolic period \cite{orient2010sapira}. In a normal heartbeat sound, S1 is followed by S2 in a continuous cycle.
 
 Abnormalities occur when there are irregularities in the cycle of S1 and S2, these irregularities are what makes CVDs. 
 
@@ -86,7 +81,7 @@ Murmurs are produced when there is a turbulent blood flow between either systoli
 \subsection{Project Framework}
 \subsubsection{Project Specifications and Requirements}
 \label{sec:req}
-\textcolor{white}{Ke a leboga Ntate}\\
+\textcolor{white}{Ke} %a leboga Ntate}\\
 The ultimate aim of the project is create an application using ML techniques that will aid patients and clinical physicians in early detection of CVDs. The application is to accept raw audio data as input and return diagnosis results as an output.
 
 This will be carried out using data from Dataset A and Dataset B. Dataset A is recorded by the general public using the iStethoscope Pro app on an iPhone, whilst Dataset B is recorded in a more professional manner by clinical physicians using a digital stethoscope. They both differ by two categories as mentioned in the opening paragraphs of Section \ref{back} and both have excessive background noise as they are recorded in real-life settings. 
@@ -108,7 +103,7 @@ The project is to be conducted under the following assumptions:
 The following are the constraints imposed on the project:
 \begin{itemize}
     \item Segmentation is based only on S1 and S2 sounds.
-    \item Only the dataset from reference \cite{bentley} is to be used due to ethics clearance attached in Appendix \ref{ethics}.
+    \item Only the dataset from reference \cite{bentley} is to be used due to ethics clearance.
     \item Only the Normal audio data will be used as a basis for the location of S1 and S2 and as a basis for segmentation.
     \item The audio data is only available in \texttt{.wav} and \texttt{.aif} formats.
 \end{itemize}
@@ -122,9 +117,9 @@ an accuracy of 46\% or higher in classifying Normals of Dataset A would be highl
 
 \subsection{Related Work}
 \label{sec:lit}
-Despite the medical significance of using ML techniques to detect for heart sounds (HSs) anomalies, this application of ML is relatively unexplored \cite{bentley}. There also exist a few studies that have done work in classifying various heartbeat sounds using these techniques \cite{26}. Of a few that exist majority of them use PCG signals \cite{53,51,36,37} whilst others use Electrocardiograms (ECG) signals \cite{4,5}. 
+Despite the medical significance of using ML techniques to detect for heart sounds (HSs) anomalies, this application of ML is relatively unexplored \cite{bentley}. There also exist a few studies that have done work in classifying various heartbeat sounds using these techniques \cite{26}. Of a few that exist majority of them use PCG signals \cite{22,3} whilst others use Electrocardiograms (ECG) signals \cite{5}. 
 
-Before classification can occur, the HSs have to first be preprocessed and segmented. Liang \textit{et al} \cite{6} dominate in a lot of work \cite{11,19,15,50} with their method of preprocessing and segmenting HSs. Some of their method are adopted from Groch \textit{et al} \cite{2}. 
+Before classification can occur, the HSs have to first be preprocessed and segmented. Liang \textit{et al} \cite{6} dominate in a lot of work \cite{22,15} with their method of preprocessing and segmenting HSs.  
 
 The features extracted from segmentation of HSs are usually time-domain based. Strunic \textit{et al} \cite{3} detects and classifies simulated murmurs \& normal HSs using similar preprocessing and segmentation techniques to \cite{6}. He trains a 3 hidden layer, 25 input and 1 output Artificial Neural Network (ANN) with simulated HSs. The ANN classifier achieves an accuracy of $85\pm7.4\%$ when tested with simulated HSs, however when tested with real-life HSs the accuracy drops to $48.7\pm12.7\%$. Unlike Strunic, Gomes \textit{et al} \cite{gomes2012classifying} train their ML models with real-life HSs having background noise. They extract time-domain features as well, using the standard deviation and mean of the systolic and diastolic periods intervals of the HSs. They achieve the highest accuracy of 72\% \& 70\% in classifying Normal HSs using the J48 Decision Tree and Multilayer Perceptron (MLP) respectively.
 
@@ -167,7 +162,7 @@ After preprocessing, the segmentation phase begins. In this phase, S1 and S2 are
 
 \subsection{Feature Extraction}
 \label{sec:feat}
-As stated in Section \ref{sec:lit}, multi-domain features make up for a more accurate representation of the different classes of HSs \cite{22,44}. In this project features from the time, frequency, cepstrum \& wavelet domain are engineered for ML. A total count of 24 features are extracted.
+As stated in Section \ref{sec:lit}, multi-domain features make up for a more accurate representation of the different classes of HSs \cite{22}. In this project features from the time, frequency, cepstrum \& wavelet domain are engineered for ML. A total count of 24 features are extracted.
 
 \subsubsection{Time Domain Features}
 \textcolor{white}{Ke na le modisa...}\\
@@ -199,7 +194,7 @@ From figure \ref{fig:dbb} it is clear that in Dataset B, the Murmur class has th
 
 
 \subsubsection{Frequency Domain Features}
-\textcolor{white}{Ke ea ipitsang Jehova...}\\
+\textcolor{white}{Ke ea ipit}\\
 Features in the frequency domain are computed by taking the FFT of the PCG signals. Through experimentation, it was discovered that murmurs tend to have distinct peaks between 180 Hz \& 190 Hz bands of their analytic envelope of their FFT. The analytic envelope computed using the FFT of a PCG signal will be termed FFTSHA for the rest of this paper. Steps followed on how the FFTSHA of a PCG signal is computed are explained concisely in Appendix \ref{app:features} Section \ref{sec:fftsha}. 
 
 Figure \ref{fig:n180} and figure \ref{fig:m180} show the difference in the FFTSHA of PCG signals in the Normal class and Murmur class respectively.
@@ -241,15 +236,54 @@ SVMs have seen a rise in popularity in the past years \cite{5}. This is due to t
 \textcolor{white}{O nkalosa dinokoaneng..}\\
 The XGBoost is a scalable ML Model and gives a state of the art results in a wide range of problems. It also has a reputation of winning Data Science and ML challenges. Of all the challenges hosted by Kaggle, teams having an XGBoost model have won the most \cite{45}. To train, the data is split on 8:2. Before training commences, parameter optimisation is performed. After finding the optimum parameters the model is redesigned, trained and tested.
 
+\section{RESULTS}
+The models are evaluated using three metrics from \texttt{sklearn} library in Python. The methods are the confusion matrix, the accuracy score and classification report. On the ANN the score is replaced by the training and testing accuracy. Figure \ref{fig:anna} and figure \ref{fig:annb} in Appendix \ref{app:res} illustrate the testing and training accuracy for Dataset A and Dataset B respectively.
 
+Table \ref{datasetA} and Table \ref{datasetB} show the precision of all the classes and the overall performance of for each model for both Dataset A and Dataset B. The models' performance are compared with the one in literature \cite{bentley}.
+\begin{table}[h!]
+\centering
+\caption{Classification Performance Dataset-A}
+\label{datasetA}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Class\\ (A)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}ANN\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}SVM\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}XGB\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Liter-\\ ature(\%)\end{tabular}} \\ \hline
+Normal & 27 & 80 & 71 & 45 \\ \hline
+Murmur & 88 & 78 & 86 & 31 \\ \hline
+ExtraHS & 67 & 25 & 57 & 11 \\ \hline
+Artifact & 100 & 57 & 50 & 58 \\ \hline
+\begin{tabular}[c]{@{}c@{}}Overall\\ Accuracy\end{tabular} & \textbf{81} & \textbf{64} & \textbf{68} & \textbf{46} \\ \hline
+\end{tabular}
+\end{table}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+\begin{table}[h!]
+\centering
+\caption{Classification Performance Dataset-B}
+\label{datasetB}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Class\\ (B)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}ANN\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}SVM\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}XGB\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Liter-\\ ature(\%)\end{tabular}} \\ \hline
+Normal & 80 & 77 & 89 & 78 \\ \hline
+Murmur & 90 & 87 & 75 & 37 \\ \hline
+Extrasys & 15 & 0 & 17 & 17 \\ \hline
+\begin{tabular}[c]{@{}c@{}}Overall\\ Accuracy\end{tabular} & \textbf{80} & \textbf{78} & \textbf{79} & \textbf{77} \\ \hline
+\end{tabular}
+\end{table}
+
+\section{CRITICAL ANALYSIS}
+
+From the ANN epoch graphs illustrated by figure \ref{fig:anna} \& figure \ref{fig:annb} in Appendix \ref{app:res} for Dataset A and Dataset B respectively, there is no sign of overfitting. This suggests that both the ANN models are not bias.
+
+Comparing the models' performances in both datasets it can be seen that the models work better on Dataset B. This is because Dataset B's HSs were recorded by professionals in a professional setting compared to Dataset A which was recorded by the general public using a smartphone i.e Dataset A is more noisy. Another role player is sample size, Dataset A has a lower sample size compared to Dataset B. ML is all about the more data one has, the better the model. 
+
+The models performance on Dataset A is somewhat distributed amongst the different classes whilst on Dataset B the performance is skewed with ranges of up to 87. This because as seen from figure \ref{fig:dist}, Dataset A samples are distributed whilst Dataset B's samples are skewed. This means that the models learn more about Normals \& Murmur HSs compared to Extrasystole HSs.
+
+In general all the models performed better than what is in literature.  With ANN almost tripling the precision of Murmurs in literature. However the models still struggle with Extrasystole HSs due to the size of the samples and also due to the fact that they are similar to Normal HSs. The confusion matrix in Appendix \ref{app:res} show that Extrasystole HSs are often mistaken for Normal HSs.
+
+\section{FUTURE RECOMMENDATIONS}
+For future work algorithms that can differentiate between Extrasystole HSs and Normal HSs needs to be implemented, techniques such as the ones in \cite{17} could be used. A larger and evenly distributed dataset can also greatly improve the ML model's accuracy. 
+
 \section{CONCLUSION}
-
-A conclusion may review the main points of the paper, but do not replicate the
-abstract as the conclusion.
-
+A method to create models that will enable first level screening of CVDs is successfully implemented. Two datasets from a digital stethoscope and a smartphone are used, from the two datasets 24 features from the time, frequency, cepstrum \& wavelet domain are extracted. The features are used to train ANN, SVM \& XGB. The precision results  of 80\%, 77\% \& 89\% meet the success criteria set for Normals of Dataset B. The shortcomings of the models include not being able to successfully identify Extrasystole HSs, more work is required in this regard. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -267,7 +301,61 @@ abstract as the conclusion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%APPENDIX%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\appendix
+
+\newpage
+\onecolumn
+\appendices
+
+%%%%%%%%%%%%%%Group Reflection%%%%%%%%%%%%%%%%%%%%%%
+\section{Reflection on Group Work}
+
+\subsection{\textbf{Introduction}}
+In this document I will be discussing the division of work amongst the members of the group and also my personal reflection on my experience of working in a group.
+
+\subsection{\textbf{Work Division}}
+During the first week, me and my partner, Boikanyo Radiokana both started off with reading papers together because we did not fully understand what what required of us. At first we thought the final project required each member to write about the whole project, hence we wanted equal exposure to all sections in the project. When we learned that for the final project, each member should focus on the section they mostly did, we divided work equally amongst ourselves. The table below shows the work division amongst us:
+
+\begin{table}[h!]
+\centering
+\caption{Work Division}
+\label{undefined}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Task} & \textbf{Team Member} \\ \hline
+Preprocessing & Boikanyo \\ \hline
+Segmentation & Boikanyo \\ \hline
+Feature Extraction & Elias \\ \hline
+Classification & Elias \\ \hline
+GUI Front-end & Boikanyo \\ \hline
+GUI Back-end & Elias \\ \hline
+GUI Integration & Boikanyo and Elias \\ \hline
+Project Poster & Boikanyo and Elias \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{\textbf{Lessons Learned}}
+Throughout the project life cycle I learned that sometimes no matter how much you try, 
+things will not always be the way you expect them to be. I have learnt the art of letting go, not everything will be 100\% accurate.
+
+\subsection{\textbf{Personal Reflection}}
+This project has taught me to appreciate the input of my others in a group. I got to experience shared responsibilities. I didn't have to worry about anything because my partner always delivered on her part. I enjoyed working in a group and learned a thing or two about myself. I am pleased with how everything turned out.
+
+\subsection{\textbf{Conclusion}}
+Overall the project was a success and I enjoyed working in a group. Tasks were evenly allocated to team members who equally delivered.
+%%%%%%%%%%%%%%Lab specifications%%%%%%%%%%%%%%%%%%%%%%
+\includepdf[scale=0.94,pages=1,pagecommand={\section{Project Specification}\thispagestyle{empty}},fitpaper=true]{labspecs.pdf}
+\includepdf[scale=0.94,pages=2,pagecommand={\thispagestyle{empty}},fitpaper=true]{labspecs.pdf}
+
+%%%%%%%%%%%%%%Project Plan%%%%%%%%%%%%%%%%%%%%%%
+\includepdf[scale=0.94,pages=1,pagecommand={\section{Project Plan}\thispagestyle{empty}},fitpaper=true]{projectPlan.pdf}
+\includepdf[scale=0.94,pages=2-6,pagecommand={\thispagestyle{empty}},fitpaper=true]{projectPlan.pdf}
+
+
+%%%%%%%%%%%%%%Clearance Certificate%%%%%%%%%%%%%%%%%%%%%%
+\includepdf[scale=0.94,pages=1,pagecommand={\section{ETHICS CLEARANCE CERTIFICATE}\thispagestyle{empty}},fitpaper=true]{clearanceCertificate.pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\twocolumn
 \section{Heart Sound Classes}
 \label{HS}
 
@@ -476,6 +564,48 @@ meanPCA2 & Mean of the second PCA vector. \\ \hline
 \multicolumn{1}{|l|}{meanPCA3} & Mean of the third PCA vector. \\ \hline
 \end{tabular}
 \end{table}
+
+\section{Results}
+\label{app:res}
+
+Figure \ref{fig:anna} and Figure \ref{fig:annb} present the testing and training accuracy of ANN for Dataset A and Dataset B respectively.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{./ANN_A.jpg}
+    \caption{Training vs testing accuracy for Dataset B}
+    \label{fig:anna}
+\end{figure}{}
+
+\newpage
+.
+\vspace{8.45cm}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.4]{./B_80_81_No_Dropout_Validation_split.png}
+    \caption{Training vs testing accuracy for Dataset B}
+    \label{fig:annb}
+\end{figure}{}
+
+The above matrix presents the confusion matrix for ANN on Dataset B. 
+\[
+ CM :
+  \begin{bmatrix}
+  \label{cm}
+     E & M & N \\
+     2 & 0 & 6  & E\\
+     4 & 9 & 2 & M \\
+     7 & 1 & 32 & N
+  \end{bmatrix}
+\]
+
+\newpage
+\onecolumn
+%%%%%%%%%%%%%%MEETINGS CLEARANCE%%%%%%%%%%%%%%%%%%%%%%
+\includepdf[scale=0.94,pages=1,pagecommand={\section{MEETINGS MINUTES}\thispagestyle{empty}},fitpaper=true]{minutes.pdf}
+\includepdf[scale=0.94,pages=2-32,pagecommand={\thispagestyle{empty}},fitpaper=true]{minutes.pdf}
+
 
 \end{document}
 
