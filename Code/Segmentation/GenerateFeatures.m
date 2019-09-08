@@ -10,7 +10,7 @@ function [features_] = GenerateFeatures(file)
     [y,fs] = audioread(file);
 
     %Plot and save figures
-        %Figures(y, 'OriginalSignal4');
+        Figures(y, 'Original');
         %FFTPlot (y,fs, 'fftOrig4');
 
 % Downsample signal to 2kHz
@@ -53,7 +53,7 @@ function [features_] = GenerateFeatures(file)
     w2 = Filter(w, newfs);
  
     %Plot and save figures
-        %Figures(w2, 'DenoisedSignal4');
+        Figures(w2, 'DenoisedSignal');
         %FFTPlot (w2,newfs, 'fftDenoised4');
  
  
