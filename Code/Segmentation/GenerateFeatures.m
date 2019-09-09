@@ -184,8 +184,10 @@ function [features_] = GenerateFeatures(file, generateFigures)
           
             signals = [w2,s,newPeaks];
             Figures(signals,'PeakIdentification')
-          
-          
+            
+            save_path = '../Dataset/denoised.wav';
+            audiowrite(save_path,w2,newfs)
+        
       end
 end
     

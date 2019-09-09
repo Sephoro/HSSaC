@@ -21,3 +21,5 @@ Code/Figures
 *.blg
 # Ignore vscode files
 .vscode
+# Ignore audio files
+*.wav
