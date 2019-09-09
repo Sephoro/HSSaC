@@ -233,8 +233,8 @@ class Ui_MainWindow(object):
         
         generateInitFigures(self.directory.text())
         
-        self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png"
-        self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png"
+        self.orig = "../Figures/OriginalSignal.png"
+        self.origFFT = "../Figures/fftOrig.png"
       
         
         pixmap = QtGui.QPixmap(self.orig)
@@ -252,9 +252,9 @@ class Ui_MainWindow(object):
         #generate features
         self.clf_.generateFeatures(self.directory.text())
         
-        self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png"
-        self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png"
-        self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png"
+        self.den = "../Figures/DenoisedSignal.png"
+        self.denFFT = "../Figures/fftDenoised.png"
+        self.peakI = "../Figures/PeakIdentification.png"
         
           
         pixmap = QtGui.QPixmap(self.den)
