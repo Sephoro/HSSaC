@@ -11,6 +11,7 @@ import os
 import sys
 sys.path.append('../Segmentation')
 from classifier import Classifier as clf
+from Initfigures import generateInitFigures
 
 
 class Ui_MainWindow(object):
@@ -201,6 +202,7 @@ class Ui_MainWindow(object):
         self.denoiseBtn.clicked.connect(self.Denoisedsignal)
         self.peaksBtn.clicked.connect(self.detectedPeaks)
         self.evaluateBtn.clicked.connect(self.evaluateModel)
+        self.play2Btn.clicked.connect(self.playDenoisedSignal)
     
     #load directory of file
     def loadDirectory(self):
@@ -214,49 +216,32 @@ class Ui_MainWindow(object):
                 
         sound = self.directory.text()
         os.system("aplay " + sound +"&")
+
+    def playDenoisedSignal(self):
+        
+        denoised = '../Dataset/denoised.wav'
+        os.system('aplay '+ denoised + '&')            
         
     #upload original signal and its fft when load button is pressed  & send dir to features generator  
     def originalsignal(self):
         
-        if self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_murmur/Btraining_murmur/185_1308073325396_C.wav":
-                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal2.png"
-                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig2.png"
-                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal2.png"
-                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised2.png"
-                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification2.png"
+        # Clear the slots to load new stuff
         
-        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setA/Atraining_normal/Atraining_normal/201108011114.wav":
-                
-                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal1.png"
-                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig1.png"
-                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal1.png"
-                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised1.png"
-                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification1.png"
-                
-        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_extrasystole/Btraining_extrastole/153_1306848820671_C.wav":
-                
-                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal3.png"
-                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig3.png"
-                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal3.png"
-                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised3.png"
-                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification3.png"
+        self.fft1.clear()
+        self.sig1.clear()
         
+        self.fft2.clear()
+        self.sig2.clear()
         
-        elif self.directory.text() ==  "/home/boikanyo/Dropbox/YOS4/ELEN4012/Dataset/setB/Btraining_murmur/Btraining_murmur/164_1307106095995_B.wav":
-                
-                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal4.png"
-                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig4.png"
-                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal4.png"
-                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised4.png"
-                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification4.png"
+        self.peaksgraph.clear()
         
-        else:
-                self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png"
-                self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png"
-                self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png"
-                self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png"
-                self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png"
+        #generate initial figures
         
+        generateInitFigures(self.directory.text())
+        
+        self.orig = "../Figures/OriginalSignal.png"
+        self.origFFT = "../Figures/fftOrig.png"
+      
         
         pixmap = QtGui.QPixmap(self.orig)
         pixmap = pixmap.scaled(pixmap.width(), self.sig1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
@@ -271,7 +256,12 @@ class Ui_MainWindow(object):
     def Denoisedsignal(self):
         
         #generate features
-        self.clf_.generateFeatures(self.directory.text()) 
+        self.clf_.generateFeatures(self.directory.text())
+        
+        self.den = "../Figures/DenoisedSignal.png"
+        self.denFFT = "../Figures/fftDenoised.png"
+        self.peakI = "../Figures/PeakIdentification.png"
+        
           
         pixmap = QtGui.QPixmap(self.den)
         pixmap = pixmap.scaled(pixmap.width(), self.sig2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)

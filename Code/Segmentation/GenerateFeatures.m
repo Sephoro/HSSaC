@@ -1,18 +1,12 @@
-function [features_] = GenerateFeatures(file)
+function [features_] = GenerateFeatures(file, generateFigures)
 
 
 % Generate features for a given file, returns a 1x26 vector of features
 
-
-    %file = '../../../../Dataset/setB/Btraining_murmur/Btraining_murmur/164_1307106095995_B.wav';
 % load file audio file
 
     [y,fs] = audioread(file);
-
-    %Plot and save figures
-        Figures(y, 'Original');
-        %FFTPlot (y,fs, 'fftOrig4');
-
+    
 % Downsample signal to 2kHz
 
     [x,newfs] = Downsample(y,fs);
@@ -46,16 +40,10 @@ function [features_] = GenerateFeatures(file)
         meanWavelet = mean(ww);
         stdWavelet = std(ww);
 
-
     
 % Refiltering using LPF
  
     w2 = Filter(w, newfs);
- 
-    %Plot and save figures
-        Figures(w2, 'DenoisedSignal');
-        %FFTPlot (w2,newfs, 'fftDenoised4');
- 
  
  % Determine Shannon Energy to get envelope
  
@@ -79,19 +67,16 @@ function [features_] = GenerateFeatures(file)
 
     if isMissedPeaks(newPositions, peaks)
     
-        [newPeaks, newPositions] = GetMissedPeaks(peaks, positions,length(newPositions));
+        [~, newPositions] = GetMissedPeaks(peaks, positions,length(newPositions));
     
     end
     
-    %Plot and save figures
-        
-        %signals = [w2,s,newPeaks];
-        %Figures(signals,'PeakIdentification4')
+   
 
 
 % Optimize peaks detection
     
-    [~, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
+    [newPeaks, newPositions] = PeakCorrect(newPeaks, newPositions,positions);
 
     % Phase 0.1 feature
         posRatio = length(ps)/length(newPositions);
@@ -180,5 +165,29 @@ function [features_] = GenerateFeatures(file)
             ratios stdFFTSHA lenFFTSHA stdlenFFTSHA lenstdFFTSHA ...
             posFFT minstdS1 maxstdS1 mmstdS1 minstdS2 maxstdS2 ...
             mmstdS2 posRatio stdWavelet meanWavelet];
+        
+      % Only generate figures if asked!
+      
+      if generateFigures
+          
+          % Save a plot of the original signal
+          
+            %Figures(y, 'OriginalSignal');
+            %FFTPlot (y,fs, 'fftOrig');
+            
+          % Save a plot of the denoised signal
+          
+            Figures(w2, 'DenoisedSignal');
+            FFTPlot (w2,newfs, 'fftDenoised');
+             
+          % Save a plot with the identified peaks
+          
+            signals = [w2,s,newPeaks];
+            Figures(signals,'PeakIdentification')
+            
+            save_path = '../Dataset/denoised.wav';
+            audiowrite(save_path,w2,newfs)
+        
+      end
 end
     
