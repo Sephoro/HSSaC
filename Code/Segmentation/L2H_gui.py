@@ -219,7 +219,18 @@ class Ui_MainWindow(object):
     #upload original signal and its fft when load button is pressed  & send dir to features generator  
     def originalsignal(self):
         
+        # Clear the slots to load new stuff
+        
+        self.fft1.clear()
+        self.sig1.clear()
+        
+        self.fft2.clear()
+        self.sig2.clear()
+        
+        self.peaksgraph.clear()
+        
         #generate initial figures
+        
         generateInitFigures(self.directory.text())
         
         self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png"
