@@ -202,6 +202,7 @@ class Ui_MainWindow(object):
         self.denoiseBtn.clicked.connect(self.Denoisedsignal)
         self.peaksBtn.clicked.connect(self.detectedPeaks)
         self.evaluateBtn.clicked.connect(self.evaluateModel)
+        self.play2Btn.clicked.connect(self.playDenoisedSignal)
     
     #load directory of file
     def loadDirectory(self):
@@ -215,6 +216,11 @@ class Ui_MainWindow(object):
                 
         sound = self.directory.text()
         os.system("aplay " + sound +"&")
+
+    def playDenoisedSignal(self):
+        
+        denoised = '../Dataset/denoised.wav'
+        os.system('aplay '+ denoised + '&')            
         
     #upload original signal and its fft when load button is pressed  & send dir to features generator  
     def originalsignal(self):
