@@ -172,8 +172,8 @@ function [features_] = GenerateFeatures(file, generateFigures)
           
           % Save a plot of the original signal
           
-            Figures(y, 'OriginalSignal');
-            FFTPlot (y,fs, 'fftOrig');
+            %Figures(y, 'OriginalSignal');
+            %FFTPlot (y,fs, 'fftOrig');
             
           % Save a plot of the denoised signal
           

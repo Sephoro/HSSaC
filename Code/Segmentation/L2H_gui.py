@@ -11,6 +11,7 @@ import os
 import sys
 sys.path.append('../Segmentation')
 from classifier import Classifier as clf
+from Initfigures import generateInitFigures
 
 
 class Ui_MainWindow(object):
@@ -218,15 +219,12 @@ class Ui_MainWindow(object):
     #upload original signal and its fft when load button is pressed  & send dir to features generator  
     def originalsignal(self):
         
-        #generate features
-        self.clf_.generateFeatures(self.directory.text()) 
+        #generate initial figures
+        generateInitFigures(self.directory.text())
         
         self.orig = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/OriginalSignal.png"
         self.origFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftOrig.png"
-        self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png"
-        self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png"
-        self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png"
-        
+      
         
         pixmap = QtGui.QPixmap(self.orig)
         pixmap = pixmap.scaled(pixmap.width(), self.sig1.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
@@ -241,7 +239,12 @@ class Ui_MainWindow(object):
     def Denoisedsignal(self):
         
         #generate features
-        #self.clf_.generateFeatures(self.directory.text()) 
+        self.clf_.generateFeatures(self.directory.text())
+        
+        self.den = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/DenoisedSignal.png"
+        self.denFFT = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/fftDenoised.png"
+        self.peakI = "/home/boikanyo/Dropbox/YOS4/ELEN4012/Submissions/HSA/Code/Figures/PeakIdentification.png"
+        
           
         pixmap = QtGui.QPixmap(self.den)
         pixmap = pixmap.scaled(pixmap.width(), self.sig2.height(), QtCore.Qt.KeepAspectRatioByExpanding, QtCore.Qt.SmoothTransformation)
