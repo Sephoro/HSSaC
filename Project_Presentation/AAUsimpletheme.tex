@@ -13,7 +13,7 @@
 % Change the color of the structural elements:
 %\setbeamercolor{structure}{fg=red}
 % Change the frame title text color:
-%\setbeamercolor{frametitle}{fg=blue}
+\setbeamercolor{frametitle}{fg=white}
 % Change the normal text color background:
 %\setbeamercolor{normal text}{fg=black,bg=gray!10}
 % ... and you can of course change a lot more - see the beamer user manual.
@@ -30,15 +30,15 @@
   \href{#1}{{\usebeamercolor[bg]{AAUsimple}#2}}%
 }
 
-\title{The AAU Simple Beamer Theme}
+\title{Listen to your Heart:}
 
-\subtitle{v.\ 1.2.1}  % could also be a conference name
+\subtitle{Heartbeat Sound Segmentation \& Classification}  % could also be a conference name
 
 \date{\today}
 
 \author{
-  Jesper Kjær Nielsen\\
-  \href{mailto:jkn@es.aau.dk}{{\tt jkn@es.aau.dk}}
+  Boikanyo Radiokana \& Elias Sepuru  
+ % \href{mailto:jkn@es.aau.dk}{{\tt jkn@es.aau.dk}}
 }
 
 % - Give the names in the same order as they appear in the paper.
@@ -46,22 +46,20 @@
 %   affiliation. See the beamer manual for an example
 
 \institute[
-%  {\includegraphics[scale=0.2]{aau_segl}}\\ %insert a company, department or university logo
-  Dept.\ of Electronic Systems\\
-  Aalborg University\\
-  Denmark
+  {\includegraphics[scale=0.2]{AAUgraphics/eie.png}}\\ %insert a company, department or university logo
+ School of Electrical \& Information Engineering\\ University of the Witwatersrand \\
+ South Africa
 ] % optional - is placed in the bottom of the sidebar on every slide
 {% is placed on the bottom of the title page
-  Department of Electronic Systems\\
-  Aalborg University\\
-  Denmark
+  School of Electrical \& Information Engineering\\ University of the Witwatersrand \\
+  South Africa
   
   %there must be an empty line above this line - otherwise some unwanted space is added between the university and the country (I do not know why;( )
 }
 
 % specify a logo on the titlepage (you can specify additional logos an include them in 
 % institute command below
-\pgfdeclareimage[height=1.5cm]{titlepagelogo}{AAUgraphics/EIElogo.png} % placed on the title page
+\pgfdeclareimage[height=2.0cm]{titlepagelogo}{AAUgraphics/EIElogo.png} % placed on the title page
 %\pgfdeclareimage[height=1.5cm]{titlepagelogo2}{AAUgraphics/aau_logo_new} % placed on the title page
 \titlegraphic{% is placed on the bottom of the title page
   \pgfuseimage{titlepagelogo}
