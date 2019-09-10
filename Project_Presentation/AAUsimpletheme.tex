@@ -5,6 +5,10 @@
 %    rotationcw,          % change the rotation direction from counter-clockwise to clockwise
 %    shownavsym          % show the navigation symbols
   ]{AAUsimple}
+
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}%
+\usepackage{graphicx}
   
 % If you want to change the colors of the various elements in the theme, edit and uncomment the following lines
 % Change the bar and sidebar colors:
@@ -81,27 +85,85 @@
 %%%%%%%%%%%%%%%%
 
 \section{Introduction}
-% motivation for creating this theme
+% Ditumedišo
 \begin{frame}{Introduction}{}
-\begin{block}{Why the AAU Simple beamer theme?}
-  \begin{itemize}
-    \item<1-> During the last couple of years, I have shared the beamer themes named \chref{http://kom.aau.dk/~jkn/latex/latex.php\#beamer_aausidebar}{AAU Sidebar} and \chref{http://kom.aau.dk/~jkn/latex/latex.php\#beamer_aalborg}{Aalborg} on my website \chref{http://kom.aau.dk/~jkn}{http://kom.aau.dk/\textasciitilde jkn}.
-    \item<2-> Both of these themes feature a sidebar in which the table of content and progress are shown.
-    \item<3-> Some people (in particular one - Yes, I am looking at you, Mads) have been asking about an AAU beamer theme without a sidebar, and the present theme named \alert{AAU Simple} is an attempt to satisfy this demand. 
-    \item<4-> Like the \chref{http://kom.aau.dk/~jkn/latex/latex.php\#beamer_aausidebar}{AAU Sidebar} theme, the theme is not really useful to people not affiliated with AAU due to the tight integration between the theme and the round AAU logo. However, everyone is of course encouraged to download and modify the theme according to their own needs. 
-  \end{itemize}
+\begin{block}{}
+	
+  \begin{columns}
+  	\column{0.5\textwidth}
+  	\begin{itemize}
+  		\item<1-> CVDs are the leading causes of death globally - WHO.
+  		\item<2-> Currently used method to check for CVDs is Cardiac Auscultation (CA).
+  		\item<3-> CA is a difficult skill to acquire.
+  		\item<4-> People are not aware of their heart conditions.
+  	\end{itemize}
+  	\column{0.5\textwidth}
+  	
+  	 \only<1>{ 
+  	 	
+  	 	\begin{figure}[t]
+  	 		
+  	 		\includegraphics[width=\textwidth,height=0.6\textheight]{AAUgraphics/who.png}
+  	 	\end{figure}
+  	 }
+  	
+  	 
+  	 % Image on second step
+  	 
+     \only<2>{ 
+     	
+     	\begin{figure}
+  	 		\centering
+  			\includegraphics[scale=0.20]{AAUgraphics/ausc3.png}
+  			
+  		\end{figure}
+      }
+     
+      % Image on 3rd step
+  
+      \only<3>{ 
+    	
+    	\begin{figure}
+    		\centering
+    		\includegraphics[scale=1]{AAUgraphics/confused.jpg}
+    	\end{figure}
+           
+           \vspace{-0.8cm}
+           
+        \begin{figure}
+        	
+        	\centering
+        	\includegraphics[width=\textwidth]{AAUgraphics/confstats.png}
+        	\caption{\scalebox{.6}{Correct diagnosis using CA  in USA, Canada \& UK respectively.}}
+        
+        \end{figure}
+    	}
+    
+       % Image on 4th Step
+       
+       \only<4>{ 
+       	
+       	\begin{figure}[t]
+       		
+       		\includegraphics[width=\textwidth,height=0.7\textheight]{AAUgraphics/aware2.png}
+       		
+       	\end{figure}
+       }
+  \end{columns}
+  
 \end{block}
 \end{frame}
+
 %%%%%%%%%%%%%%%%
 
-\subsection{License}
-% the license
-\begin{frame}{Introduction}{License}
-  \begin{itemize}
-    \item<1-> The AAU logo is covered by copyright rules. I have used the logo from \chref{http://aau.designguides.dk}{http://aau.designguides.dk}. As long as you use the theme for making presentations in connection with your work at AAU, you are allowed to use the AAU logo.
-    \item<2-> The rest of the theme is provided under the GNU General Public License v. 3 (GPLv3). This basically means that you can redistribute it and/or modify it under the same license. For more information on the GPL license see \chref{http://www.gnu.org/licenses/}{http://www.gnu.org/licenses/}
-  \end{itemize}
-\end{frame}
+	%\subsection{License}
+	%% the license
+	%\begin{frame}{Introduction}{License}
+	%  \begin{itemize}
+	%
+	%  \end{itemize}
+	%\end{frame}
+	
 %%%%%%%%%%%%%%%%
 
 \section{Installation}
