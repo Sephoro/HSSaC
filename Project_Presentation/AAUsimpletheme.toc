@@ -17,4 +17,3 @@
 \beamer@sectionintoc {6}{Future Work}{35}{0}{6}
 \beamer@sectionintoc {7}{User Interface}{40}{0}{7}
 \beamer@sectionintoc {8}{Work Division}{41}{0}{8}
-\beamer@sectionintoc {9}{Conclusion}{42}{0}{9}
