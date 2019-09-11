@@ -46,8 +46,12 @@
 \headcommand {\beamer@subsectionentry {0}{4}{3}{22}{Preprocessing}}
 \headcommand {\slideentry {4}{3}{1}{22/22}{Preprocessing}{0}}
 \headcommand {\beamer@framepages {22}{22}}
-\headcommand {\beamer@partpages {1}{22}}
 \headcommand {\beamer@subsectionpages {22}{22}}
-\headcommand {\beamer@sectionpages {19}{22}}
-\headcommand {\beamer@documentpages {22}}
-\headcommand {\gdef \inserttotalframenumber {11}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{23}{Segmentation}}
+\headcommand {\slideentry {4}{4}{1}{23/23}{Segmentation}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@partpages {1}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@sectionpages {19}{23}}
+\headcommand {\beamer@documentpages {23}}
+\headcommand {\gdef \inserttotalframenumber {12}}

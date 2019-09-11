@@ -9,3 +9,4 @@
 \beamer@subsectionintoc {4}{1}{Data Acquisition}{19}{0}{4}
 \beamer@subsectionintoc {4}{2}{System Overview}{21}{0}{4}
 \beamer@subsectionintoc {4}{3}{Preprocessing}{22}{0}{4}
+\beamer@subsectionintoc {4}{4}{Segmentation}{23}{0}{4}
