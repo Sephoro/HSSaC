@@ -38,8 +38,12 @@
 \headcommand {\beamer@subsectionentry {0}{4}{1}{19}{Data Acquisition}}
 \headcommand {\slideentry {4}{1}{1}{19/20}{Data Acquisition}{0}}
 \headcommand {\beamer@framepages {19}{20}}
-\headcommand {\beamer@partpages {1}{20}}
 \headcommand {\beamer@subsectionpages {19}{20}}
-\headcommand {\beamer@sectionpages {19}{20}}
-\headcommand {\beamer@documentpages {20}}
-\headcommand {\gdef \inserttotalframenumber {9}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{21}{System Overview}}
+\headcommand {\slideentry {4}{2}{1}{21/21}{System Overview}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@partpages {1}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@sectionpages {19}{21}}
+\headcommand {\beamer@documentpages {21}}
+\headcommand {\gdef \inserttotalframenumber {10}}
