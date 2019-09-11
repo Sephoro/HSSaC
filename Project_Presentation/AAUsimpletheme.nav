@@ -63,8 +63,13 @@
 \headcommand {\sectionentry {5}{Testing \& Results}{26}{Testing \& Results}{0}}
 \headcommand {\slideentry {5}{0}{1}{26/30}{}{0}}
 \headcommand {\beamer@framepages {26}{30}}
-\headcommand {\beamer@partpages {1}{30}}
-\headcommand {\beamer@subsectionpages {26}{30}}
 \headcommand {\beamer@sectionpages {26}{30}}
-\headcommand {\beamer@documentpages {30}}
-\headcommand {\gdef \inserttotalframenumber {15}}
+\headcommand {\beamer@subsectionpages {26}{30}}
+\headcommand {\sectionentry {6}{Future Work}{31}{Future Work}{0}}
+\headcommand {\slideentry {6}{0}{1}{31/35}{}{0}}
+\headcommand {\beamer@framepages {31}{35}}
+\headcommand {\beamer@partpages {1}{35}}
+\headcommand {\beamer@subsectionpages {31}{35}}
+\headcommand {\beamer@sectionpages {31}{35}}
+\headcommand {\beamer@documentpages {35}}
+\headcommand {\gdef \inserttotalframenumber {16}}

@@ -13,3 +13,4 @@
 \beamer@subsectionintoc {4}{5}{Feature Extraction}{24}{0}{4}
 \beamer@subsectionintoc {4}{6}{Classification}{25}{0}{4}
 \beamer@sectionintoc {5}{Testing \& Results}{26}{0}{5}
+\beamer@sectionintoc {6}{Future Work}{31}{0}{6}
