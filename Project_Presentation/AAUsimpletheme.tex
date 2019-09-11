@@ -92,7 +92,7 @@
   \begin{columns}
   	\column{0.5\textwidth}
   	\begin{itemize}
-  		\item<1-4> CVDs are the leading causes of death globally - WHO.
+  		\item<1-4> CVDs are the leading causes of deaths globally - WHO.
   		\item<2-4> Currently used method to check for CVDs is Cardiac Auscultation (CA).
   		\item<3-4> CA is a difficult skill to acquire.
   		\item<4-4> People are not aware of their heart conditions.
@@ -468,7 +468,7 @@
 \begin{frame}{Methodology}{System Overview}
 \begin{figure}
 	\centering
-	\includegraphics[scale = 0.5]{AAUgraphics/presentation.png}
+	\includegraphics[scale = 0.5]{AAUgraphics/presentation2.png}
 \end{figure}{}
 \end{frame}
 
@@ -557,6 +557,88 @@
 
 \end{frame}
 
+\subsection{Feature Extraction}
+
+\begin{frame}{Methodology}{Feature Extraction}
+
+ \only<1>{ % O kgaufi le go lwala
+	
+	\begin{block}{Time Domain Features}
+	
+		
+		\begin{figure}
+			
+			\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/timeD.png}
+			
+		\end{figure}
+	\end{block}
+	
+}
+
+ \only<2>{ % O kgaufi le go lwala
+	
+	\begin{block}{Frequency Domain Features}
+		
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/fftsham1.png}
+				\caption{FFTSHA of Murmur HSs at [180 190] Hz band}
+			\end{figure}
+			\column{0.5\textwidth}
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/fftshan.png}
+				\caption{FFTSHA of Normal HS at [180 190] Hz band}
+			\end{figure}
+			
+		\end{columns}
+		
+	\end{block}	
+}
+
+\only<3>{ % O kgaufi le go lwala
+	
+	\begin{block}{Wavelet Features}
+		
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/rebuildError_A.png}
+				\caption{Rebuild error of Dataset A}
+			\end{figure}
+			\column{0.5\textwidth}
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/rebuildError_B.png}
+				\caption{Rebuild error of Dataset B}
+			\end{figure}
+			
+		\end{columns}
+		
+	\end{block}
+	
+}
+
+\only<4>{ % O kgaufi le go lwala
+	
+	\begin{block}{Cepstrum Features}
+		
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.7\textwidth,height=0.5\textheight]{AAUgraphics/m.png}
+				\caption{Cepstrum Feature Extraction}
+			\end{figure}
+		
+		
+	\end{block}
+}
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -564,7 +646,7 @@
 \begin{frame}{Methodology}{Classification}
 
 \begin{enumerate}
-	\item ANN (Atrificial Neural Network)
+	\item ANN (Artificial Neural Network)
 	\item SVM (Support Vector Machine)
 	\item XGBoost (XGradient Boost)
 \end{enumerate}{}
@@ -684,11 +766,14 @@
 \begin{itemize}
 	\item A method to segment and classify heart sounds into normal and diseased categories has been successfully developed  and  implemented.
 	\item An accuracy of over 80\% and above is achieved for normal heart sounds classification
-	\item Recommendations for future works is presented
+	\item More Work is required to improve the classification of Extrasystole HSs 
 \end{itemize}{}
 \end{frame}
 
-
+{\aauwavesbg
+	\begin{frame}[plain,noframenumbering]
+	\finalpage{Thank you!}
+\end{frame}}
 
 
 
