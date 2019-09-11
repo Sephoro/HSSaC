@@ -155,7 +155,7 @@
 
   \only<5>{
   	\vspace{-0.8\textheight}
-      % \scalebox{1.5}
+   
      {\Large Easily accessible \& reliable heart diagnosis systems would help reduce deaths due to CVDs.}
 
      }
@@ -209,22 +209,185 @@
 
 %%%%%%%%%%%%%%%%
 
-\section{User Interface}
-\subsection{Loading the Theme and Theme Options}
-% list of the themes and options
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
-  \begin{block}{The Presentation Theme}
-    It is very simple to load the presentation theme. Just type\\
-    {\tt \textbackslash usetheme[<options>]\{AAUsimple\}}\\
-    which is exactly the same way other beamer presentation themes are loaded. The presentation theme loads the inner, outer and color AAU Simple theme files and passes the {\tt <options>} on to these files.
-  \end{block}
-  \begin{block}{The Inner Theme}
-    You can load the inner theme directly by\\
-    {\tt \textbackslash useinnertheme\{AAUsimple\}}\\
-    and it has no options.
-  \end{block}
+\section{Background}
+
+\subsection{Heartbeat Sounds Categories}
+% Mafapha
+
+\begin{frame}{Background}{Heartbeat Sounds Categories}
+
+
+	
+ This project deals with classifying HSs into the following categories:
+  
+  \begin{enumerate}
+  	\item Normal HSs
+  	\item Murmur HSs
+  	\item Extra Heartsounds
+  	\item Exrasystole HSs
+  	\item Artifact
+  \end{enumerate}
+
+
 \end{frame}
+
+
+\begin{frame}{Background}{Heartbeat Sounds Categories}
+
+  \only<1>{ % Tša go loka
+	
+	\begin{block}{Normal HSs}
+		
+		\vspace{1cm}
+		\hspace{0.25\textwidth}{\texttt{lub...dub......lub...dub.....}}
+
+		\begin{figure}
+			\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/normal.png}
+		\end{figure}
+
+		\end{block}
+
+	}
+
+    \only<2>{ % Bolwetši fela mo!
+     	
+     	\begin{block}{Murmur HSs}
+        \vspace{0.5cm}
+     	\hspace{0.18\textwidth}{\texttt{lub..***..dub......lub..***..dub......}}
+     	
+     	\hspace{0.45\textwidth} or 
+     	
+     	\hspace{0.18\textwidth}{\texttt{lub....dub...***...lub....dub...***...}}
+     	
+     		\begin{figure}
+     		
+     			\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/murmur.png}
+     		
+     		\end{figure}
+     	\end{block}
+      
+      }
+  
+  \only<3>{ % O kgaufi le go lwala
+  	
+  	\begin{block}{Extra HS}
+  		
+  		\vspace{0.5cm}
+  		
+  		\hspace{0.2\textwidth}{\texttt{lub.lub...dub.....lub.lub...dub.....}}
+  		
+  		\hspace{0.45\textwidth} or 
+  		
+  		\hspace{0.2\textwidth}{\texttt{lub...dub.dub.....lub...dub.dub.....}}
+  		
+  		\begin{figure}
+  			
+  			\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/extra.png}
+  			
+  		\end{figure}
+  	\end{block}
+  	
+  }
+
+  \only<4>{ % O kgaufi le go lwala
+ 	
+ 	\begin{block}{Extrasytole HSs}
+ 		
+ 		\vspace{0.5cm}
+ 		
+ 		\hspace{0.17\textwidth}{\texttt{lub....dub......lub.lub...dub.....lub....}}
+ 		
+ 		\hspace{0.45\textwidth} or 
+ 		
+ 		\hspace{0.17\textwidth}{\texttt{lub....dub.dub.....lub...dub......lub....}}
+ 		
+ 		\begin{figure}
+ 			
+ 			\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/extrasys.png}
+ 			
+ 		\end{figure}
+ 	\end{block}
+ 	
+ }
+ 
+ 
+  \only<5>{ % O nyaka go re dira dibari?
+ 	
+ 	\begin{block}{Artifact Sound}
+ 		
+ 		Not an actual HSs.
+ 		
+ 		\begin{figure}
+ 			
+ 			\includegraphics[width=0.8\textwidth,height=0.5\textheight]{AAUgraphics/arti.png}
+ 			
+ 		\end{figure}
+ 	\end{block}
+ 	
+ }
+ 
+\end{frame}
+
+
+\begin{frame}{Background}{Heartbeat Sounds Categories}
+
+	\begin{block}{Can you guess the categories?}
+		
+	
+         \vspace{-0.25cm}
+		\begin{figure}
+			A
+			
+			\includegraphics[width=0.8\textwidth,height=0.45\textheight]{AAUgraphics/question.png}
+		
+		\end{figure}
+	
+	   \vspace{-2.0cm}
+		\begin{figure}
+			B
+			\vspace{-0.04cm}
+		
+			\includegraphics[width=0.8\textwidth,height=0.40\textheight]{AAUgraphics/question2.png}
+		
+		\end{figure}
+	
+     \end{block}
+
+\end{frame}
+
+%% 
+
+\subsection{Related Work}
+
+\begin{frame}{Background}{Related Work}
+
+\begin{block}{Can you guess the categories?}
+	
+	
+	\vspace{-0.25cm}
+	\begin{figure}
+		A
+		
+		\includegraphics[width=0.8\textwidth,height=0.45\textheight]{AAUgraphics/question.png}
+		
+	\end{figure}
+	
+	\vspace{-2.0cm}
+	\begin{figure}
+		B
+		\vspace{-0.04cm}
+		
+		\includegraphics[width=0.8\textwidth,height=0.40\textheight]{AAUgraphics/question2.png}
+		
+	\end{figure}
+	
+\end{block}
+
+\end{frame}
+
+
 %%%%%%%%%%%%%%%%
+
 
 % list of the themes and options
 \begin{frame}{User Interface}{Loading the Theme and Theme Options}
