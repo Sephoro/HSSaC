@@ -472,6 +472,41 @@
 \end{figure}{}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Preprocessing}
+% general installation instructions
+\begin{frame}{Methodology}{Preprocessing}
+% \begin{block}
+\begin{columns}
+	\column{0.5\textwidth}
+	\begin{enumerate}
+		\item Downsample to 2kHz
+		\item Bandpass Chebyshev filter [30Hz-195Hz]
+		\item Normalization [-1 1]
+		\item Wavelet Decomposition (db7 level 5)
+		\item Refilter with LPF [195Hz]
+	\end{enumerate}{}
+	
+	\column{0.5\textwidth}
+	\only<1>{
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.87\textwidth]{AAUgraphics/originalp.png}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.87\textwidth]{AAUgraphics/denoisedp.png}
+		\end{figure}
+		
+	}
+\end{columns}
+
+
+%\end{block}
+\end{frame}
 
 
 
