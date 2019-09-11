@@ -5,3 +5,5 @@
 \beamer@subsectionintoc {3}{1}{Heartbeat Sounds Categories}{10}{0}{3}
 \beamer@subsectionintoc {3}{2}{Related Work}{17}{0}{3}
 \beamer@subsectionintoc {3}{3}{Project Setting}{18}{0}{3}
+\beamer@sectionintoc {4}{Methodology}{19}{0}{4}
+\beamer@subsectionintoc {4}{1}{Data Acquisition}{19}{0}{4}

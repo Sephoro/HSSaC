@@ -31,8 +31,15 @@
 \headcommand {\beamer@subsectionentry {0}{3}{3}{18}{Project Setting}}
 \headcommand {\slideentry {3}{3}{1}{18/18}{Project Setting}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@partpages {1}{18}}
-\headcommand {\beamer@subsectionpages {18}{18}}
 \headcommand {\beamer@sectionpages {10}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\gdef \inserttotalframenumber {8}}
+\headcommand {\beamer@subsectionpages {18}{18}}
+\headcommand {\sectionentry {4}{Methodology}{19}{Methodology}{0}}
+\headcommand {\beamer@subsectionpages {19}{18}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{19}{Data Acquisition}}
+\headcommand {\slideentry {4}{1}{1}{19/20}{Data Acquisition}{0}}
+\headcommand {\beamer@framepages {19}{20}}
+\headcommand {\beamer@partpages {1}{20}}
+\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\beamer@sectionpages {19}{20}}
+\headcommand {\beamer@documentpages {20}}
+\headcommand {\gdef \inserttotalframenumber {9}}
