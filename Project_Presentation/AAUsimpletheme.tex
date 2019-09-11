@@ -570,8 +570,81 @@
 \end{enumerate}{}
 
 \end{frame}
-%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Testing \& Results}
+\begin{frame}{Testing \& Results}
+
+\only<1>{
+	\begin{block}{Segmentation}
+		\begin{figure}
+			\centering
+			\includegraphics[scale = 0.5]{AAUgraphics/elias.png}
+		\end{figure}{}
+	\end{block}
+}
+
+\only<2>{
+	\begin{block}{Dataset A - ANN Performance}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.67\textwidth]{AAUgraphics/ANN_A.jpg}
+		\end{figure}
+	\end{block}
+}
+
+\only<3>{
+	\begin{block}{Dataset B - ANN Performance}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.67\textwidth]{AAUgraphics/ANN_B.png}
+		\end{figure}
+	\end{block}
+}
+
+\only<4>{
+	\begin{block}{Classification}
+		
+		\begin{table}[h!]
+			\centering
+			\caption{Classification Performance Dataset-A}
+			\label{datasetA}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				\textbf{\begin{tabular}[c]{@{}c@{}}Class\\ (A)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}ANN\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}SVM\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}XGB\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Literature\\(\%)\end{tabular}} \\ \hline
+				Normal & 27 & 80 & 71 & 45 \\ \hline
+				Murmur & 88 & 78 & 86 & 31 \\ \hline
+				ExtraHS & 67 & 25 & 57 & 11 \\ \hline
+				Artifact & 100 & 57 & 50 & 58 \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Overall\\ Accuracy\end{tabular} & \textbf{81} & \textbf{64} & \textbf{68} & \textbf{46} \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{block}
+}
+
+\only<5>{
+	
+	\begin{block}{Classification}
+		
+		\begin{table}[h!]
+			\centering
+			\caption{Classification Performance Dataset-B}
+			\label{datasetB}
+			\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				\textbf{\begin{tabular}[c]{@{}c@{}}Class\\ (B)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}ANN\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}SVM\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}XGB\\ (\%)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Literature\\(\%)\end{tabular}} \\ \hline
+				Normal & 80 & 77 & 89 & 78 \\ \hline
+				Murmur & 90 & 87 & 75 & 37 \\ \hline
+				Extrasys & 15 & 0 & 17 & 17 \\ \hline
+				\begin{tabular}[c]{@{}c@{}}Overall\\ Accuracy\end{tabular} & \textbf{80} & \textbf{78} & \textbf{79} & \textbf{77} \\ \hline
+			\end{tabular}
+		\end{table}
+	\end{block}
+}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
