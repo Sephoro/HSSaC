@@ -391,142 +391,21 @@
 \end{frame}
 
 
+\subsection{Project Setting}
 
+\begin{frame}{Background}{Project Setting}
 
-
-
-
-%%%%%%%%%%%%%%%%
-
-
-% list of the themes and options
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
-  \begin{block}{The Outer Theme}
-    You can load the outer theme directly by\\
-    {\tt \textbackslash useoutertheme[<options>]\{AAUsimple\}}\\
-    Currently, the theme options are
-  \begin{itemize}
-    \item {\tt progressstyle=\{fixedCircCnt, movCircCnt, or corner\}}: set how the progress is illustrated. The value {\tt fixedCircCnt} is the default. 
-    \item {\tt rotationcw}: set the direction of the rotation of the progress circle to clockwise instead of counterclockwise. This option has only effect for the circular progress bars.
-    \item {\tt shownavsym}: show the navigation symbols
-  \end{itemize}
-  \end{block}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%
-
-% list of the themes and options
-\begin{frame}{User Interface}{Loading the Theme and Theme Options}
-  \begin{block}{The Color Theme}
-    You can load the color theme directly by\\
-    {\tt \textbackslash usecolortheme\{AAUsimple\}}\\
-    and it has no options.
-  \end{block}
-  \pause
-  \begin{block}{The Color Element {\tt AAUsimple}}
-    The color theme defines a new beamer color element named {\tt AAUsimple} whose foreground and background colors are
-    \begin{itemize}
-      \item fg: {\usebeamercolor[fg]{AAUsimple}light blue (\{RGB\}\{194,193,204\})}
-      \item bg: {\usebeamercolor[bg]{AAUsimple}dark blue (\{RGB\}\{33,26,82\})}
-    \end{itemize}
-    You can use these colors in the standard beamer way by using the command
-    {\tt \textbackslash usebeamercolor[<fg or bg>]\{AAUsimple\}}. See the beamer manual for instructions.\\
- \pause Note that this version of the theme is an official AAU version and is in accordance with the \chref{http://aau.designguides.dk/}{AAU design guide}. However, you can easily change it (including the colour of the logo) by following the steps in {\tt beamercolorthemeAAUsimple.sty}.
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Modifying the theme}
-% how to modify the theme
-{\setbeamercolor{AAUsimple}{fg=gray!50,bg=orange!50}
- \setbeamercolor{structure}{fg=red}
- \setbeamercolor{frametitle}{use=structure,fg=structure.fg}
- \setbeamercolor{normal text}{bg=gray!20}
-\begin{frame}{User Interface}{Modifying the Theme}
-  \begin{itemize}
-    \item<1-> The default configuration of fonts, colors, and layout complies with the \chref{http://aau.designguides.dk}{AAU design guidelines} and is the \alert{official} version of the theme.
-    \item<2-> However, you can modify specific elements of the theme through the templates provided by the beamer class. Please refer to the beamer user manual for instructions.
-    \item<3-> For example, on this slide the following commands have been used
-      \begin{itemize}
-        \item Change the header colours:\\
-        {\tt \textbackslash setbeamercolor\{AAUsimple\}\{fg=blue!20,bg=red!50\}}
-        \item Change the color of the structural elements:\\
-        {\tt \textbackslash setbeamercolor\{structure\}\{fg=black\}}\\
-        \item Change the frame title text color:
-        {\tt \textbackslash setbeamercolor\{frametitle\}\{use=structure, fg=structure.fg\}}
-        \item Change the background color of the text
-        {\tt \textbackslash setbeamercolor\{normal text\}\{bg=gray!20\}}
-      \end{itemize}
-  \end{itemize}
-\end{frame}}
-%%%%%%%%%%%%%%%%
-
-\subsection{AAU Waves}
-% the AAU Waves background
-\begin{frame}{User Interface}{The AAU Waves Background Image}
-\begin{block}{The AAU Waves Background Image}
-\begin{itemize}
-  \item<1-> In this documentation, the title page frame and the last frame have the AAU waves as the background image. The AAU waves background image can be added to any single frame by wrapping a frame in the following way\\
-  {\tt \{\textbackslash aauwavesbg\\
-    \textbackslash begin\{frame\}[<options>]\{Frame Title\}\{Frame Subtitle\}\\
-    \ldots\\
-    \textbackslash end\{frame\}\}}
-  \item<2-> Ideally, I would like to create a new frame option called {\tt aauwavesbg} which can enable the AAU waves background. However, I have not been able to figure out how such an option can be added. If you know how this can be done, please contact me.
-\end{itemize}
+\begin{block}{}
+	
+	
+	  {\Large To make this project applicable to real world situations, two datasets recorded in real life settings will be used. Both datasets contain excessive background noise.}
+		
 \end{block}
+
 \end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Widescreen Support}
-% Widescreen Support
-\begin{frame}{User Interface}{Widescreen Support}
-\begin{block}{Widescreen Support}
-  Newer projectors and almost any modern TV support a widescreen format such as 16:10 or 16:9. Beamer (>= v. 3.10) supports various aspect ratios of the slides. According to section 8.3 on page 77 of the Beamer user guide v. 3.10, you can write\\
-{\tt\textbackslash documentclass[aspectratio=1610]\{beamer\}}\\
-to get slides with an aspect ratio of 16:10. You can also use 169, 149, 54, 43 (default), and 32 to get other aspect ratios.
-\end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
 
 
-\section{Feedback}
-\subsection{Known Problems}
-% known problems
-\begin{frame}{Feedback}{Known Problems}
-  \begin{description}
-    \item[More than 50 slides] Internally, TeX cannot work with numbers exceeding +/-16
-  \end{description}
-\end{frame}
-%%%%%%%%%%%%%%%%
 
-\subsection{Bugs, Comments and Suggestions}
-% help me iron out the bugs or give me some comment and suggestions
-\begin{frame}{Feedback}{Bugs, Comments and Suggestions}
-  \begin{itemize}
-    \item<1-> There are probably still some bugs in the theme. If you should find one, then please let me know. No bug is too small!
-    \item<2-> Also, please contact me, if you have some exciting new ideas or just some simple usability improvements.
-  \end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%
 
-\subsection{Contact Information}
-% contact information
-\begin{frame}{Feedback}{Contact Information}
-In case you have any comments, suggestions or have found a bug, please do not hesitate to contact me. You can find my contact details below.
-  \begin{center}
-    \insertauthor\\
-    \chref{http://kom.aau.dk/~jkn}{http://kom.aau.dk/\textasciitilde jkn}\\
-    Niels Jernes Vej 12, A6-309\\
-    9220 Aalborg Ø
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-{\aauwavesbg
-\begin{frame}[plain,noframenumbering]
-  \finalpage{Thank you for using this theme!}
-\end{frame}}
-%%%%%%%%%%%%%%%%
 
 \end{document}

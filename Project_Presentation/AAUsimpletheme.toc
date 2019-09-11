@@ -4,10 +4,4 @@
 \beamer@sectionintoc {3}{Background}{10}{0}{3}
 \beamer@subsectionintoc {3}{1}{Heartbeat Sounds Categories}{10}{0}{3}
 \beamer@subsectionintoc {3}{2}{Related Work}{17}{0}{3}
-\beamer@subsectionintoc {3}{3}{Modifying the theme}{22}{0}{3}
-\beamer@subsectionintoc {3}{4}{AAU Waves}{25}{0}{3}
-\beamer@subsectionintoc {3}{5}{Widescreen Support}{27}{0}{3}
-\beamer@sectionintoc {4}{Feedback}{28}{0}{4}
-\beamer@subsectionintoc {4}{1}{Known Problems}{28}{0}{4}
-\beamer@subsectionintoc {4}{2}{Bugs, Comments and Suggestions}{29}{0}{4}
-\beamer@subsectionintoc {4}{3}{Contact Information}{31}{0}{4}
+\beamer@subsectionintoc {3}{3}{Project Setting}{18}{0}{3}
