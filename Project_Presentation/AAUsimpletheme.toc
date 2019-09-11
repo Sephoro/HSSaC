@@ -1,0 +1,19 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Objectives}{8}{0}{2}
+\beamer@sectionintoc {3}{Background}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Heartbeat Sounds Categories}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Related Work}{17}{0}{3}
+\beamer@subsectionintoc {3}{3}{Project Setting}{18}{0}{3}
+\beamer@sectionintoc {4}{Methodology}{19}{0}{4}
+\beamer@subsectionintoc {4}{1}{Data Acquisition}{19}{0}{4}
+\beamer@subsectionintoc {4}{2}{System Overview}{21}{0}{4}
+\beamer@subsectionintoc {4}{3}{Preprocessing}{22}{0}{4}
+\beamer@subsectionintoc {4}{4}{Segmentation}{23}{0}{4}
+\beamer@subsectionintoc {4}{5}{Feature Extraction}{24}{0}{4}
+\beamer@subsectionintoc {4}{6}{Feature Extraction}{25}{0}{4}
+\beamer@subsectionintoc {4}{7}{Classification}{29}{0}{4}
+\beamer@sectionintoc {5}{Testing \& Results}{30}{0}{5}
+\beamer@sectionintoc {6}{Future Work}{35}{0}{6}
+\beamer@sectionintoc {7}{User Interface}{40}{0}{7}
+\beamer@sectionintoc {8}{Work Division}{41}{0}{8}

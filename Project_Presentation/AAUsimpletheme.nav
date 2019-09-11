@@ -1,0 +1,96 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Introduction}{3}{Introduction}{0}}
+\headcommand {\slideentry {1}{0}{1}{3/7}{}{0}}
+\headcommand {\beamer@framepages {3}{7}}
+\headcommand {\beamer@sectionpages {3}{7}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\sectionentry {2}{Objectives}{8}{Objectives}{0}}
+\headcommand {\slideentry {2}{0}{1}{8/9}{}{0}}
+\headcommand {\beamer@framepages {8}{9}}
+\headcommand {\beamer@sectionpages {8}{9}}
+\headcommand {\beamer@subsectionpages {8}{9}}
+\headcommand {\sectionentry {3}{Background}{10}{Background}{0}}
+\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{10}{Heartbeat Sounds Categories}}
+\headcommand {\slideentry {3}{1}{1}{10/10}{Heartbeat Sounds Categories}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {3}{1}{2}{11/15}{Heartbeat Sounds Categories}{0}}
+\headcommand {\beamer@framepages {11}{15}}
+\headcommand {\slideentry {3}{1}{3}{16/16}{Heartbeat Sounds Categories}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\beamer@subsectionpages {10}{16}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{17}{Related Work}}
+\headcommand {\slideentry {3}{2}{1}{17/17}{Related Work}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\beamer@subsectionpages {17}{17}}
+\headcommand {\beamer@subsectionentry {0}{3}{3}{18}{Project Setting}}
+\headcommand {\slideentry {3}{3}{1}{18/18}{Project Setting}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\beamer@sectionpages {10}{18}}
+\headcommand {\beamer@subsectionpages {18}{18}}
+\headcommand {\sectionentry {4}{Methodology}{19}{Methodology}{0}}
+\headcommand {\beamer@subsectionpages {19}{18}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{19}{Data Acquisition}}
+\headcommand {\slideentry {4}{1}{1}{19/20}{Data Acquisition}{0}}
+\headcommand {\beamer@framepages {19}{20}}
+\headcommand {\beamer@subsectionpages {19}{20}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{21}{System Overview}}
+\headcommand {\slideentry {4}{2}{1}{21/21}{System Overview}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@subsectionentry {0}{4}{3}{22}{Preprocessing}}
+\headcommand {\slideentry {4}{3}{1}{22/22}{Preprocessing}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@subsectionpages {22}{22}}
+\headcommand {\beamer@subsectionentry {0}{4}{4}{23}{Segmentation}}
+\headcommand {\slideentry {4}{4}{1}{23/23}{Segmentation}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@subsectionentry {0}{4}{5}{24}{Feature Extraction}}
+\headcommand {\slideentry {4}{5}{1}{24/24}{Feature Extraction}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\beamer@subsectionentry {0}{4}{6}{25}{Feature Extraction}}
+\headcommand {\slideentry {4}{6}{1}{25/28}{Feature Extraction}{0}}
+\headcommand {\beamer@framepages {25}{28}}
+\headcommand {\beamer@subsectionpages {25}{28}}
+\headcommand {\beamer@subsectionentry {0}{4}{7}{29}{Classification}}
+\headcommand {\slideentry {4}{7}{1}{29/29}{Classification}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\beamer@sectionpages {19}{29}}
+\headcommand {\beamer@subsectionpages {29}{29}}
+\headcommand {\sectionentry {5}{Testing \& Results}{30}{Testing \& Results}{0}}
+\headcommand {\slideentry {5}{0}{1}{30/34}{}{0}}
+\headcommand {\beamer@framepages {30}{34}}
+\headcommand {\beamer@sectionpages {30}{34}}
+\headcommand {\beamer@subsectionpages {30}{34}}
+\headcommand {\sectionentry {6}{Future Work}{35}{Future Work}{0}}
+\headcommand {\slideentry {6}{0}{1}{35/39}{}{0}}
+\headcommand {\beamer@framepages {35}{39}}
+\headcommand {\beamer@sectionpages {35}{39}}
+\headcommand {\beamer@subsectionpages {35}{39}}
+\headcommand {\sectionentry {7}{User Interface}{40}{User Interface}{0}}
+\headcommand {\slideentry {7}{0}{1}{40/40}{}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\beamer@sectionpages {40}{40}}
+\headcommand {\beamer@subsectionpages {40}{40}}
+\headcommand {\sectionentry {8}{Work Division}{41}{Work Division}{0}}
+\headcommand {\slideentry {8}{0}{1}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\beamer@sectionpages {41}{41}}
+\headcommand {\beamer@subsectionpages {41}{41}}
+\headcommand {\sectionentry {9}{Conclusion}{42}{Conclusion}{0}}
+\headcommand {\slideentry {9}{0}{1}{42/42}{}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {9}{0}{2}{43/43}{}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\beamer@partpages {1}{43}}
+\headcommand {\beamer@subsectionpages {42}{43}}
+\headcommand {\beamer@sectionpages {42}{43}}
+\headcommand {\beamer@documentpages {43}}
+\headcommand {\gdef \inserttotalframenumber {20}}
