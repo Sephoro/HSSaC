@@ -50,8 +50,12 @@
 \headcommand {\beamer@subsectionentry {0}{4}{4}{23}{Segmentation}}
 \headcommand {\slideentry {4}{4}{1}{23/23}{Segmentation}{0}}
 \headcommand {\beamer@framepages {23}{23}}
-\headcommand {\beamer@partpages {1}{23}}
 \headcommand {\beamer@subsectionpages {23}{23}}
-\headcommand {\beamer@sectionpages {19}{23}}
-\headcommand {\beamer@documentpages {23}}
-\headcommand {\gdef \inserttotalframenumber {12}}
+\headcommand {\beamer@subsectionentry {0}{4}{5}{24}{Feature Extraction}}
+\headcommand {\slideentry {4}{5}{1}{24/24}{Feature Extraction}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@partpages {1}{24}}
+\headcommand {\beamer@subsectionpages {24}{24}}
+\headcommand {\beamer@sectionpages {19}{24}}
+\headcommand {\beamer@documentpages {24}}
+\headcommand {\gdef \inserttotalframenumber {13}}
