@@ -174,103 +174,39 @@
 	
 %%%%%%%%%%%%%%%%
 
-\section{Installation}
-% general installation instructions
-\begin{frame}{Installation}
-  The theme consists of four files
-  \begin{enumerate}
-    \item {\tt beamerthemeAAUsimple.sty}
-    \item {\tt beamerinnerthemeAAUsimple.sty}
-    \item {\tt beamerouterthemeAAUsimple.sty}
-    \item {\tt beamercolorthemeAAUsimple.sty}
-  \end{enumerate}
-  The theme can either be installed for local or global use.
-  \pause
-  \begin{block}{Local Installation}
-    The simplest way of installing the theme is by placing the four theme files in the same folder as your presentation. When you download the theme, the four theme files are located in the {\tt local} folder.
-  \end{block}
+\section{Objectives}
+% Kgwekgwe ya taba.
+\begin{frame}{Objectives}
+
+	\begin{itemize}
+	
+		\item<1-> To segment Heartbeat sounds (HSs) based on the location \\of S1 (lub) S2 (dub) in Normal HSs.
+	
+
+	\end{itemize}
+	{	\begin{figure}
+			\centering
+			\includegraphics[width=0.75\textwidth,height=0.25\textheight]{AAUgraphics/s1s2s1wc.png}
+		\end{figure}
+	}
+
+   \pause
+   
+   \begin{itemize}
+   	
+   		\item<2-> Create models that will enable preliminary screening of CVDs	
+   	
+   \end{itemize}
+   
+   	{	\begin{figure}
+   			\centering
+   			\includegraphics[width=0.5\textwidth,height=0.35\textheight]{AAUgraphics/classification2.png}
+   		\end{figure}
+   	}
+
+
 \end{frame}
 
-% general installation instructions
-\begin{frame}{Installation}
-  \begin{block}{Global Installation}
-  \begin{itemize}
-     \item If you wish to make the theme globally available, you must put the files in your local latex directory tree. The location of the root of the local directory tree depends on the operating system and the latex distribution. On the following slides, you can read the instructions for some common setups.
-    \item When you download the theme, the four theme files are embedded in a directory structure (in the {\tt global} folder) ready to be copied directly to the root of your local directory tree.
-    \item On the following slides, we refer to this directory structure as {\tt <dirstruct>}. \alert{Note} that some parts of the directory may already exist if you have installed other packages in your local latex directory tree. If this is the case, you simply merge {\tt <dirstruct>} with your existing setup.
-  \end{itemize}
-  \end{block}
-\end{frame}
-
-\subsection{GNU/Linux}
-% installation on GNU/Linux
-\begin{frame}{Installation}{GNU/Linux}
-  \begin{block}{Ubuntu with TeX Live}
-    \begin{enumerate}
-      \item Place the {\tt <dirstruct>} in the root of your local latex directory tree. By default it is\\
-        {\tt \textasciitilde /texmf}\\
-        If the root does not exist, create it. The symbol {\tt \textasciitilde} refers to your home folder, i.e., {\tt /home/<username>}
-      \item In a terminal run\\
-        {\tt \$ texhash \textasciitilde /texmf}
-    \end{enumerate}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Microsoft Windows}
-% installation on Microsoft Windows
-\begin{frame}{Installation}{Microsoft Windows}
-  \begin{block}{Windows with MiKTeX}
-    Apparently, MiKTeX does not include a local latex directory tree by default. Therefore, you first have to create it.
-    \begin{enumerate}
-      \item To do this, create a folder {\tt <somewhere>} named, e.g., {\tt texmf}
-      \item Add this folder in the Roots tab of the MiKTeX Settings dialog
-      \item Place the {\tt <dirstruct>} in your newly created local latex directory tree\\
-    {\tt <somewhere>\textbackslash texmf}\\
-      \item Open the MiKTeX Settings dialog and click Refresh FNDB.
-    \end{enumerate}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-% installation on Microsoft Windows Cont'd
-\begin{frame}{Installation}{Microsoft Windows}
-  \begin{block}{Windows with TeX Live}
-    In the advanced TeX Live Installer, you can manually change the default position of the root of the local latex directory tree. However, we assume the default position below.
-    \begin{enumerate}
-      \item Place the {\tt <dirstruct>} in your local latex directory tree\\
-        {\tt \%USERPROFILE\%\textbackslash texmf}\\
-        If it does not exist, create it. In XP {\tt \%USERPROFILE\%} is\\
-      {\tt c:\textbackslash Document and Settings\textbackslash<username>}\\
-      by default, and in Vista and above it is by default\\
-      {\tt c:\textbackslash Users\textbackslash<username>}
-      \item Open the TeX Live Manager dialog and select 'Update filename database' under 'Actions'.
-    \end{enumerate}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Mac OS X}
-% installation on Mac OS X
-\begin{frame}{Installation}{Mac OS X}
-  \begin{block}{Mac OS X with MacTeX}
-     Place the {\tt <dirstruct>} in the root of your local latex directory tree. By default it is\\
-        {\tt \textasciitilde /Library/texmf}\\
-        If the root does not exist, create it. The symbol {\tt \textasciitilde} refers to your home folder, i.e., {\tt /home/<username>}
-  \end{block}
-\end{frame}
-%%%%%%%%%%%%%%%%
-
-\subsection{Required Packages}
-% list of required packages
-\begin{frame}{Installation}{Required Packages}
-  Of course, you have to have the Beamer class installed. In addition, the theme loads two packages
-  \begin{itemize}
-    \item TikZ\footnote{By the way, TikZ is an awesome package for creating beautiful graphics. If you do not believe me, then have a look at these \chref{http://www.texample.net/tikz/examples/}{online examples} or the \chref{http://tug.ctan.org/tex-archive/graphics/pgf/base/doc/generic/pgf/pgfmanual.pdf}{pgf user manual}. If you want to create beautiful plots, you should use the pgfplots package which is based on TikZ.}
-    \item calc
-  \end{itemize}
-  These packages are very common and should therefore be included in your latex distribution.
-\end{frame}
 %%%%%%%%%%%%%%%%
 
 \section{User Interface}

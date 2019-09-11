@@ -23,3 +23,7 @@ Code/Figures
 .vscode
 # Ignore audio files
 *.wav
+# Ignore Beamer.tex files
+*.toc
+*.nav
+*.gz

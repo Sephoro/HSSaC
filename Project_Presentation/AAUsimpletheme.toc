@@ -1,16 +1,12 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{Installation}{8}{0}{2}
-\beamer@subsectionintoc {2}{1}{GNU/Linux}{11}{0}{2}
-\beamer@subsectionintoc {2}{2}{Microsoft Windows}{12}{0}{2}
-\beamer@subsectionintoc {2}{3}{Mac OS X}{14}{0}{2}
-\beamer@subsectionintoc {2}{4}{Required Packages}{15}{0}{2}
-\beamer@sectionintoc {3}{User Interface}{16}{0}{3}
-\beamer@subsectionintoc {3}{1}{Loading the Theme and Theme Options}{16}{0}{3}
-\beamer@subsectionintoc {3}{2}{Modifying the theme}{21}{0}{3}
-\beamer@subsectionintoc {3}{3}{AAU Waves}{24}{0}{3}
-\beamer@subsectionintoc {3}{4}{Widescreen Support}{26}{0}{3}
-\beamer@sectionintoc {4}{Feedback}{27}{0}{4}
-\beamer@subsectionintoc {4}{1}{Known Problems}{27}{0}{4}
-\beamer@subsectionintoc {4}{2}{Bugs, Comments and Suggestions}{28}{0}{4}
-\beamer@subsectionintoc {4}{3}{Contact Information}{30}{0}{4}
+\beamer@sectionintoc {2}{Objectives}{8}{0}{2}
+\beamer@sectionintoc {3}{User Interface}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Loading the Theme and Theme Options}{10}{0}{3}
+\beamer@subsectionintoc {3}{2}{Modifying the theme}{15}{0}{3}
+\beamer@subsectionintoc {3}{3}{AAU Waves}{18}{0}{3}
+\beamer@subsectionintoc {3}{4}{Widescreen Support}{20}{0}{3}
+\beamer@sectionintoc {4}{Feedback}{21}{0}{4}
+\beamer@subsectionintoc {4}{1}{Known Problems}{21}{0}{4}
+\beamer@subsectionintoc {4}{2}{Bugs, Comments and Suggestions}{22}{0}{4}
+\beamer@subsectionintoc {4}{3}{Contact Information}{24}{0}{4}
