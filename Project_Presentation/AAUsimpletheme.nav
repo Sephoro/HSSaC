@@ -54,8 +54,12 @@
 \headcommand {\beamer@subsectionentry {0}{4}{5}{24}{Feature Extraction}}
 \headcommand {\slideentry {4}{5}{1}{24/24}{Feature Extraction}{0}}
 \headcommand {\beamer@framepages {24}{24}}
-\headcommand {\beamer@partpages {1}{24}}
 \headcommand {\beamer@subsectionpages {24}{24}}
-\headcommand {\beamer@sectionpages {19}{24}}
-\headcommand {\beamer@documentpages {24}}
-\headcommand {\gdef \inserttotalframenumber {13}}
+\headcommand {\beamer@subsectionentry {0}{4}{6}{25}{Classification}}
+\headcommand {\slideentry {4}{6}{1}{25/25}{Classification}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@partpages {1}{25}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\beamer@sectionpages {19}{25}}
+\headcommand {\beamer@documentpages {25}}
+\headcommand {\gdef \inserttotalframenumber {14}}

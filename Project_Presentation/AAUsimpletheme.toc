@@ -11,3 +11,4 @@
 \beamer@subsectionintoc {4}{3}{Preprocessing}{22}{0}{4}
 \beamer@subsectionintoc {4}{4}{Segmentation}{23}{0}{4}
 \beamer@subsectionintoc {4}{5}{Feature Extraction}{24}{0}{4}
+\beamer@subsectionintoc {4}{6}{Classification}{25}{0}{4}
