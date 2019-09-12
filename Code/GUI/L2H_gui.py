@@ -9,9 +9,11 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 import sys
-sys.path.append('../Segmentation')
-from classifier import Classifier as clf
 from Initfigures import generateInitFigures
+
+sys.path.append('../Classification')
+from classifier import Classifier as clf
+
 
 
 class Ui_MainWindow(object):
