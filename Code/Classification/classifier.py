@@ -1,8 +1,11 @@
 import sys
 import numpy as np
-from FeatureVector import generateFeatures
-sys.path.append('../Classification')
+
 import models as md # Models to be used
+
+sys.path.append('../Segmentation')
+from FeatureVector import generateFeatures
+
 
 
 class Classifier:
@@ -15,6 +18,7 @@ class Classifier:
         self.filedir = filedir
 
         self.featureVector = generateFeatures(self.filedir,self.datasetDir)
+        print(self.featureVector)
 
     
     def classify(self,modelName):
