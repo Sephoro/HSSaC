@@ -27,3 +27,5 @@ Code/Figures
 *.toc
 *.nav
 *.gz
+# Ignore Jupyter notebook build files
+.ipynb_checkpoints
