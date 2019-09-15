@@ -29,4 +29,5 @@ Code/Figures
 *.gz
 # Ignore Jupyter notebook build files
 .ipynb_checkpoints
-
+#Ignore Training log files
+Notebooks/Logs
