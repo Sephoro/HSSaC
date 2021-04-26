@@ -9,4 +9,5 @@ def generateInitFigures(filename):
     
     # Generate initial figures
     eng = matlab.engine.start_matlab()
+    eng.cd(r'../Segmentation')
     eng.InitialPlots(filename,nargout=0) 
