@@ -7,7 +7,7 @@ Code/Figures
 #ignore gui
 *.ui
 # Ignore CSV files
-*.csv
+#*.csv
 # Ignore pickled models
 # *.pkl
 # Ignore python cache files
