@@ -19,7 +19,7 @@ close all
          
 
 % Which dataset do you want to generate features for?
-dataset = 'A';
+dataset = 'B';
 
 if dataset == 'A'
     
@@ -40,7 +40,7 @@ if dataset == 'A'
     class = [classA;classB;classC;classD];
     features = [feature1 ;feature2 ;feature3; featuresArt];
     
-    filename = '../Dataset/heartbeatFeaturesA4.csv';
+    filename = '../Dataset/heartbeatFeaturesA5.csv';
 else
     
     % For Dataset B
@@ -60,7 +60,7 @@ else
     class = [classA;classB;classC];
     features = [feature1 ;feature2 ;feature3];
     
-    filename = '../Dataset/heartbeatFeaturesB4.csv';
+    filename = '../Dataset/heartbeatFeaturesB5.csv';
     
 end
 
